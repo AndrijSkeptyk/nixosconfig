@@ -29,32 +29,33 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
-  services.xserver.displayManager.defaultSession = "none+bspwm"; 
+  services.xserver.displayManager.defaultSession = "xfce+bspwm"; 
 
-#  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+
+#  services.xserver.desktopManager.lxqt.enable = true;
 
   services.xserver.windowManager.i3.enable = true;
   
   services.xserver.windowManager.bspwm.enable = true;
   
-  services.xserver.windowManager.berry.enable = true;
 
-#  services.xserver.windowManager.xmonad.enable = true;
 
-#  services.xserver.windowManager.stumpwm.enable = true;
-services.xserver.windowManager.session = [{
-  name = "stumpwm";
-  start = ''
-    /run/current-system/sw/bin/lxqt-policykit-agent &
-    ${pkgs.crow-translate}/bin/crow &
-    ${pkgs.copyq}/bin/copyq &
-    ${pkgs.flameshot}/bin/flameshot &
-    ${pkgs.stumpwm}/bin/stumpwm &
-    waitPID=$!
-    ${pkgs.polybar}/bin/polybar stumpwm &
-    '';
-  }];
-  environment.systemPackages = [ pkgs.stumpwm 
+
+
+
+
+  environment.systemPackages = [
+   pkgs.xfce.xfce4-timer-plugin
+   pkgs.xfce.xfce4-genmon-plugin
+   pkgs.xfce.xfce4-i3-workspaces-plugin
+   pkgs.xfce.xfce4-mailwatch-plugin
+   pkgs.xfce.xfce4-namebar-plugin
+   pkgs.xfce.xfce4-netload-plugin
+   pkgs.xfce.xfce4-screenshooter
+   pkgs.xfce.xfce4-verve-plugin
+   pkgs.xfce.xfce4-weather-plugin
+   pkgs.xfce.xfce4-xkb-plugin 
    pkgs.polybar
    pkgs.flameshot 
    pkgs.copyq 
@@ -63,7 +64,7 @@ services.xserver.windowManager.session = [{
    pkgs.lxqt.lxqt-policykit
   ];
 
-  services.xserver.windowManager.qtile.enable = true;
+
 
 
   
