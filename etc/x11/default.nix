@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =  [  ];
+  imports =  [ 
+#              ./sxhkd.nix
+              ./picom.nix
+              ./bspwm.nix
+  ];
 
 
 
@@ -37,7 +41,6 @@
 
   services.xserver.windowManager.i3.enable = true;
   
-  services.xserver.windowManager.bspwm.enable = true;
   
 
 
@@ -74,29 +77,6 @@
    home.file.".background-image".source = ./wallparers/m1.jpg;
   };
 
-
-
-
-
-  services.picom = {
-    enable = true;
-    backend = "glx";
-    shadow = true;
-    vSync = true;
-#    blur = true;
-    shadowExclude = [
-      "_GTK_FRAME_EXTENTS@:c"
-      "class_g = '.ulauncher-wrapped'"
-      "class_g = 'Conky'"
-      "class_g = 'Peek'"
-      "class_g = 'Ulauncher'"
-      "class_g = 'gromit-mpx'"
-      "class_g = 'i3-frame'"
-      "name = 'Polybar tray window'"
-      "name = 'polybar-blur-noshadow'"
-      "name = 'polybar-noblur-noshadow'"
-    ];
-  };
 
 
 }

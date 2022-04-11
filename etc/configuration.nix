@@ -13,9 +13,11 @@
         ../myfilesystem.nix
         ./terminal/default.nix
         ./pkgs.nix
+        ./docker.nix
         ./x11/default.nix
         ./shells/default.nix
         ./users.nix
+        ./searx.nix
     ];
 
 
@@ -44,7 +46,8 @@
   networking.networkmanager.enable = true;
   
   virtualisation.libvirtd.enable = true;
-
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -83,7 +86,15 @@
 #      dataDir ="/home/andrey/Notesbooks/mytrilium/"; 
     };
 
-
+#  services.miniflux.enable = true;
+#  services.miniflux.config.LZISTEN_ADDR = "localhost:9999";
+#  services.postgresql.enable  = true;
+#  services.tt-rss.enable  = true;
+# services.tt-rss.database.user  = "admin";
+#  services.tt-rss.database.password  = "password";
+#services.selfoss.enable  = true;
+#services.nginx.enable  = true;
+#services.selfoss.user  = "andrey";
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

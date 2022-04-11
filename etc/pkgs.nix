@@ -82,6 +82,7 @@ in {
     lua51Packages.lua-iconv
     masterpdfeditor4
     mediainfo
+    miller
     monolith
     mpv
     mupdf
@@ -92,6 +93,7 @@ in {
     p7zip
     picom
     pistol
+    php
     pmount
     poppler
     pulseaudio
@@ -138,6 +140,7 @@ in {
     xorg.libXinerama
     xorg.libXrandr
     xorg.libXScrnSaver
+    xorg.xev
     xorg.xmessage
     xorg.xkill
     xsane
