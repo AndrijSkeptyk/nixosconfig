@@ -12,6 +12,10 @@ in {
 
   environment.systemPackages = with pkgs; [
     alacritty
+    adb-sync
+    adbfs-rootless
+    android-studio
+    android-file-transfer
     archivemount
     aria2
     aspell
@@ -21,9 +25,11 @@ in {
     atool 
     autojump
     avfs
+    bat
     btrfs-progs
     cabal-install
     calibre
+    calibre-web
     catdoc 
     cdrtools
     clementine
@@ -46,6 +52,7 @@ in {
     flameshot
     font-manager
     foomatic-filters
+    fslint
     fzf
     fzy
     gcc
@@ -57,6 +64,7 @@ in {
     glow #Render markdown on the CLI
     gmrun
     gnumake
+    gnome.gnome-keyring
     gparted
     groff
     gtklp
@@ -71,6 +79,7 @@ in {
     htop
     imagemagick
     jp # for cli view json
+    julia-bin
     kbdd
     keepassxc
     killall
@@ -86,6 +95,7 @@ in {
     monolith
     mpv
     mupdf
+    mysql
     ncurses
     nodePackages.ungit
     odt2txt
@@ -95,6 +105,7 @@ in {
     pistol
     php
     pmount
+    postgresql
     poppler
     pulseaudio
     python2Full
@@ -135,6 +146,8 @@ in {
     xclip
     xdg-utils
     xdotool
+    xfce.xfce4-netload-plugin
+    xfce.xfce4-weather-plugin
     xorg.libX11
     xorg.libXft
     xorg.libXinerama

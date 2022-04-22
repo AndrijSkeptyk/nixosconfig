@@ -12,6 +12,7 @@
         ./hardware-configuration.nix
         ../myfilesystem.nix
         ./terminal/default.nix
+        ./net/default.nix
         ./pkgs.nix
         ./docker.nix
         ./x11/default.nix
@@ -28,30 +29,15 @@
      home.homeDirectory = "/home/andrey";
    };
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
    time.timeZone = "Europe/Zaporozhye";
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.br-6fdbab5ada7c.useDHCP = true;
-  networking.interfaces.docker0.useDHCP = true;
-  networking.interfaces.enp2s0.useDHCP = true;
-  networking.interfaces.veth6e14cb9.useDHCP = true;
-  networking.interfaces.veth8db1382.useDHCP = true;
-  networking.networkmanager.enable = true;
   
   virtualisation.libvirtd.enable = true;
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
 
   # Select internationalisation properties.
@@ -62,8 +48,6 @@
   # };
 
 
-  #TOR
-  services.tor.enable = true;
 
   # Enable CUPS to print documents.
 #  services.printing = {
@@ -76,15 +60,10 @@
 #           };
 #
 #    services.system-config-printer.enable=true;
-    hardware.sane.enable = true;
+  hardware.sane.enable = true;
   # Enable sound.
   sound.enable = true; hardware.pulseaudio.enable = true;
 
-  services.trilium-server={
-      enable = true;
-      port = 8899;
-#      dataDir ="/home/andrey/Notesbooks/mytrilium/"; 
-    };
 
 #  services.miniflux.enable = true;
 #  services.miniflux.config.LZISTEN_ADDR = "localhost:9999";
@@ -108,16 +87,7 @@
     enableSSHSupport = true;
    };
 
-  # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
