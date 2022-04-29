@@ -2,8 +2,8 @@
 
 {
   imports =  [ 
-#              ./sxhkd.nix
-              ./picom.nix
+              ./sxhkd.nix
+#              ./picom.nix
               ./bspwm.nix
   ];
 
@@ -36,10 +36,12 @@
   services.xserver.displayManager.defaultSession = "xfce+bspwm"; 
 
   services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.desktopManager.enlightenment.enable = true;
 
 #  services.xserver.desktopManager.lxqt.enable = true;
 
-  services.xserver.windowManager.i3.enable = true;
+  services.xserver.windowManager.berry.enable = true;
+#  services.xserver.windowManager.herbstluftwm.enable = true;
   
   
 
@@ -65,8 +67,14 @@
    pkgs.crow-translate
    pkgs.sxhkd
    pkgs.lxqt.lxqt-policykit
+   pkgs.enlightenment.enlightenment
+   pkgs.enlightenment.econnman
+   pkgs.enlightenment.ephoto
+   pkgs.enlightenment.evisum
+   pkgs.enlightenment.rage
+   pkgs.enlightenment.terminology
+   pkgs.enlightenment.efl
   ];
-
 
 
 
