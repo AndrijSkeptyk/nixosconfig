@@ -3,7 +3,7 @@
 {
   imports =  [ 
               ./sxhkd.nix
-#              ./picom.nix
+              ./picom.nix
               ./bspwm.nix
   ];
 
@@ -33,15 +33,21 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
-  services.xserver.displayManager.defaultSession = "xfce+bspwm"; 
+  services.xserver.displayManager.defaultSession = "lxqt+bspwm"; 
 
-  services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.desktopManager.enlightenment.enable = true;
+#  services.xserver.desktopManager.xfce.enable = true;
+#  services.xserver.desktopManager.pantheon.enable = true;
 
-#  services.xserver.desktopManager.lxqt.enable = true;
+  services.xserver.desktopManager.lxqt.enable = true;
+  environment.lxqt.excludePackages = [
+    pkgs.lxqt.qterminal
+    pkgs.lxqt.lximage-qt
+    pkgs.lxqt.qtermwidget
+    pkgs.lxqt.compton-conf
+  ];
 
   services.xserver.windowManager.berry.enable = true;
-#  services.xserver.windowManager.herbstluftwm.enable = true;
+  services.xserver.windowManager.spectrwm.enable = true;
   
   
 
@@ -51,29 +57,22 @@
 
 
   environment.systemPackages = [
-   pkgs.xfce.xfce4-timer-plugin
-   pkgs.xfce.xfce4-genmon-plugin
-   pkgs.xfce.xfce4-i3-workspaces-plugin
-   pkgs.xfce.xfce4-mailwatch-plugin
-   pkgs.xfce.xfce4-namebar-plugin
-   pkgs.xfce.xfce4-netload-plugin
-   pkgs.xfce.xfce4-screenshooter
-   pkgs.xfce.xfce4-verve-plugin
-   pkgs.xfce.xfce4-weather-plugin
-   pkgs.xfce.xfce4-xkb-plugin 
+#   pkgs.xfce.xfce4-timer-plugin
+#   pkgs.xfce.xfce4-genmon-plugin
+#   pkgs.xfce.xfce4-i3-workspaces-plugin
+#   pkgs.xfce.xfce4-mailwatch-plugin
+#   pkgs.xfce.xfce4-namebar-plugin
+#   pkgs.xfce.xfce4-netload-plugin
+#   pkgs.xfce.xfce4-screenshooter
+#   pkgs.xfce.xfce4-verve-plugin
+#   pkgs.xfce.xfce4-weather-plugin
+#   pkgs.xfce.xfce4-xkb-plugin 
    pkgs.polybar
    pkgs.flameshot 
    pkgs.copyq 
    pkgs.crow-translate
    pkgs.sxhkd
-   pkgs.lxqt.lxqt-policykit
-   pkgs.enlightenment.enlightenment
-   pkgs.enlightenment.econnman
-   pkgs.enlightenment.ephoto
-   pkgs.enlightenment.evisum
-   pkgs.enlightenment.rage
-   pkgs.enlightenment.terminology
-   pkgs.enlightenment.efl
+   pkgs.xkblayout-state
   ];
 
 

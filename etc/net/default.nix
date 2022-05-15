@@ -3,7 +3,7 @@
 
 {
   
- imports = [ 
+ imports = [./firefox.nix 
  ];
 
   networking.hostName = "nixos"; # Define your hostname.

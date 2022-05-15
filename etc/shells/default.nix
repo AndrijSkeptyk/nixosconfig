@@ -19,7 +19,13 @@
         source "${pkgs.clifm}/share/clifm/functions/subshell_notice.sh" 
 #        tomp3() {
 #          ffmpeg -i "$1" -vn -codec:a libmp3lame -q:a 2 "$1".mp3
-#          }'';
+#          }
+        lr() {
+          cp -r $(readlink -f $1;unlink $1>/dev/null) $1
+      }'';
+
+
+
 
     shells = [ pkgs.bashInteractive pkgs.zsh ];
     
@@ -32,12 +38,15 @@
       lsp = "netstat -tupln";
 
       ns = "nix search ";
+      nh = "nix-hash --type sha256 --base32 ";
       nsh = "nix-shell ";
       nr = "sudo nixos-rebuild switch ";
       ne = "nix-env ";
 
-      gg = "git ";
-      gd= "git clone $(xclip -o -sel cli)";
+      g = "git ";
+      gpp = "git clone $(xclip -o -sel cli)";
+      ytpp = "youtube-dl -o '%(title)s.%(ext)s' --external-downloader aria2c $(xclip -o -sel cli)";
+      ygpp = "you-get $(xclip -o -sel cli)";
     };
   };
 

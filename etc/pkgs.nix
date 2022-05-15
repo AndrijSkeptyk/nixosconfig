@@ -16,6 +16,8 @@ in {
     adbfs-rootless
     android-studio
     android-file-transfer
+#    arcan.durden
+#    arcan.arcan
     archivemount
     aria2
     aspell
@@ -32,6 +34,7 @@ in {
     calibre-web
     catdoc 
     cdrtools
+    chromium
     clementine
     cmake
     conky
@@ -49,6 +52,7 @@ in {
     ffmpeg-full
     ffmpegthumbnailer
     file
+#    firefox
     flameshot
     font-manager
     foomatic-filters
@@ -89,7 +93,7 @@ in {
     libuchardet
     lsof
     lua51Packages.lua-iconv
-    masterpdfeditor4
+#    masterpdfeditor4
     mediainfo
     miller
     monolith
