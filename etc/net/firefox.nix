@@ -24,7 +24,7 @@
       })
 
       (pkgs.fetchFirefoxAddon {
-        name = "keepassxc"; 
+        name = "keepassxc_browser"; 
         url = "https://addons.mozilla.org/firefox/downloads/file/3934394/keepassxc_browser-1.7.12-fx.xpi";
         sha256 = "1226q0vhh6h0a1jxbwsfkasfxy0fm81jxd4vyp4scpzqh7q454pq";
       })
@@ -48,6 +48,10 @@
       DisablePocket = true;
       DisableTelemetry = true;
       DisableFirefoxAccounts = true;
+      DisableFirefoxScreenshots = true;
+      DisableFirefoxPasswordReveal = true;
+      DontCheckDefaultBrowser = true;
+      DisplayMenuBar = "default-off";
       FirefoxHome = {
         Pocket = false;
         Snippets = false;
@@ -76,7 +80,7 @@
         home.packages = [
           myFirefox
           pkgs.firefox-esr-unwrapped
-          pkgs.tridactyl-native
+#          pkgs.tridactyl-native
         ];
       };  
     

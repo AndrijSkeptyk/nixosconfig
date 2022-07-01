@@ -2,9 +2,9 @@
 
 {
   imports =  [ 
-              ./sxhkd.nix
+#              ./sxhkd.nix
               ./picom.nix
-              ./bspwm.nix
+#              ./bspwm.nix
   ];
 
 
@@ -33,7 +33,7 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
-  services.xserver.displayManager.defaultSession = "lxqt+bspwm"; 
+  services.xserver.displayManager.defaultSession = "lxqt+qtile"; 
 
 #  services.xserver.desktopManager.xfce.enable = true;
 #  services.xserver.desktopManager.pantheon.enable = true;
@@ -46,8 +46,8 @@
     pkgs.lxqt.compton-conf
   ];
 
-  services.xserver.windowManager.berry.enable = true;
-  services.xserver.windowManager.spectrwm.enable = true;
+#  services.xserver.windowManager.berry.enable = true;
+  services.xserver.windowManager.qtile.enable = true;
   
   
 
@@ -67,11 +67,11 @@
 #   pkgs.xfce.xfce4-verve-plugin
 #   pkgs.xfce.xfce4-weather-plugin
 #   pkgs.xfce.xfce4-xkb-plugin 
-   pkgs.polybar
+#   pkgs.polybar
    pkgs.flameshot 
    pkgs.copyq 
    pkgs.crow-translate
-   pkgs.sxhkd
+#   pkgs.sxhkd
    pkgs.xkblayout-state
   ];
 
@@ -81,7 +81,9 @@
 
 
   home-manager.users.andrey = { pkgs, ... }: {
-   home.file.".background-image".source = ./wallparers/m1.jpg;
+    home.file.".background-image".source = ./wallpapers/sity.jpg;
+    xdg.configFile."qtile/config.py".source = ./config.py;
+
   };
 
 

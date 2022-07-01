@@ -40,6 +40,7 @@
       "-" = "preview-tui";
       "o" = "organize";
       "c" = "-!$SHELL -c clifm";
+      "i" = "-!ipython --profile=shell";
     };
  xdg.configFile."nnn/plugins/myfzplug".text =  ''
       #CUSTOMDIR1="$HOME/.local/share/nautilus/scripts"

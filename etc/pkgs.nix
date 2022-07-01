@@ -11,7 +11,7 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    alacritty
+#    alacritty
     adb-sync
     adbfs-rootless
     android-studio
@@ -41,30 +41,31 @@ in {
     copyq
     crow-translate
     curl
+    czkawka
     deer
     djvulibre
     dmenu
     docker
     docker-compose
     emacs
-    enchant #spell checking
+#    enchant #spell checking
+    epick
     evince
     ffmpeg-full
     ffmpegthumbnailer
     file
-#    firefox
     flameshot
     font-manager
     foomatic-filters
-    fslint
     fzf
+    feh
     fzy
     gcc
     gcc_multi
     ghc
     gimp-with-plugins
     gitFull
-    github-desktop
+#    github-desktop
     glow #Render markdown on the CLI
     gmrun
     gnumake
@@ -74,16 +75,16 @@ in {
     gtklp
     gutenprintBin
     gv #x11 ghostscript
-    gxkb
-    haskell-ci
+#    gxkb
+#    haskell-ci
     highlight
     home-manager
-    hplip
-    hplipWithPlugin
+#    hplip
+#    hplipWithPlugin
     htop
     imagemagick
     jp # for cli view json
-    julia-bin
+#    julia-bin
     kbdd
     keepassxc
     killall
@@ -101,6 +102,7 @@ in {
     mupdf
     mysql
     ncurses
+    nerdfonts
     nodePackages.ungit
     odt2txt
     okular
@@ -113,11 +115,12 @@ in {
     poppler
     pulseaudio
     python2Full
+    python3Full
     python39Packages.dbus-python
     python39Packages.ipython
     python39Packages.pip
     python39Packages.xapian
-    python3Full
+    python39Packages.mistune
     qemu
     qutebrowser
     recoll
@@ -126,6 +129,7 @@ in {
     scrot
     sqlite
     sqlitebrowser
+    starship
     stack
     sxiv
     system-config-printer
@@ -133,12 +137,12 @@ in {
     terminus_font
     terminus_font_ttf
     tree
-    trilium-server
+#    trilium-server
     nodePackages.ungit
     unrar
-    unstable.fzf-zsh
-    unstable.i3pystatus
-    unstable.clifm
+    fzf-zsh #u
+    i3pystatus #u
+    clifm #u
     unzip
     usbutils
     util-linux

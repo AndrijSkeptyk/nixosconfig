@@ -3,7 +3,9 @@
 
 {
   
- imports = [./firefox.nix 
+  imports = [
+    ./firefox.nix 
+    ./chromium.nix 
  ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -31,10 +33,10 @@
     };
 
 
-#  services.calibre-web.enable = true;
-#  services.calibre-web.user = "andrey";
-#  services.calibre-web.options.enableBookConversion = true;
-#  services.calibre-web.options.calibreLibrary = /home/andrey/Calibre/Society/metadata.db;
+  services.calibre-web.enable = true;
+  services.calibre-web.user = "andrey";
+  services.calibre-web.options.enableBookConversion = true;
+#  services.calibre-web.options.calibreLibrary = /home/andrey/Calibre/All/metadata.db;
 
 }
 

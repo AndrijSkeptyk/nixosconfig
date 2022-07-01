@@ -39,6 +39,9 @@
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
 
+  documentation.man = { enable = true; man-db.enable = false;
+  mandoc.enable = true; };
+  documentation.dev.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "ru_RU.UTF-8";
