@@ -37,11 +37,11 @@
       sdwn = "shutdown -h 0";
       lsp = "netstat -tupln";
 
-      ns = "nix search ";
       nh = "nix-hash --type sha256 --base32 ";
-      nsh = "nix-shell ";
+      ns = "nix-shell ";
       nr = "sudo nixos-rebuild switch ";
       ne = "nix-env ";
+      x = "xonsh";
 
       g = "git ";
       gpp = "git clone $(xclip -o -sel cli)";

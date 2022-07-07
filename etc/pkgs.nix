@@ -84,6 +84,7 @@ in {
     htop
     imagemagick
     jp # for cli view json
+    jgmenu
 #    julia-bin
     kbdd
     keepassxc
@@ -106,6 +107,7 @@ in {
     nodePackages.ungit
     odt2txt
     okular
+    obsidian
     p7zip
     picom
     pistol
@@ -113,20 +115,23 @@ in {
     pmount
     postgresql
     poppler
-    pulseaudio
+    pulseaudioFull
+    pavucontrol
     python2Full
     python3Full
     python39Packages.dbus-python
     python39Packages.ipython
-    python39Packages.pip
+#    python39Packages.pip
     python39Packages.xapian
     python39Packages.mistune
     qemu
-    qutebrowser
+#    qps
     recoll
     rofi
     ruby
     scrot
+    sigil
+    smenu
     sqlite
     sqlitebrowser
     starship
@@ -140,6 +145,7 @@ in {
 #    trilium-server
     nodePackages.ungit
     unrar
+    ueberzug
     fzf-zsh #u
     i3pystatus #u
     clifm #u
@@ -164,6 +170,7 @@ in {
     xorg.xev
     xorg.xmessage
     xorg.xkill
+    xonsh
     xsane
     you-get
     youtube-dl

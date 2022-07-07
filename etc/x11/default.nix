@@ -69,6 +69,12 @@
 #   pkgs.xfce.xfce4-xkb-plugin 
 #   pkgs.polybar
    pkgs.flameshot 
+   pkgs.lxqt.lxqt-themes
+   pkgs.lightly-qt
+   pkgs.qgnomeplatform
+   pkgs.zuki-themes
+   pkgs.theme-obsidian2
+   pkgs.qtstyleplugin-kvantum-qt4
    pkgs.copyq 
    pkgs.crow-translate
 #   pkgs.sxhkd
