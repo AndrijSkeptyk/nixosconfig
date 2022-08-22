@@ -20,6 +20,9 @@
 #        tomp3() {
 #          ffmpeg -i "$1" -vn -codec:a libmp3lame -q:a 2 "$1".mp3
 #          }
+        ytpp() {
+           youtube-dl -o '%(title)s.%(ext)s' --external-downloader  aria2c $@  $(xclip -o -sel cli)
+           }
         lr() {
           cp -r $(readlink -f $1;unlink $1>/dev/null) $1
       }'';
@@ -45,7 +48,6 @@
 
       g = "git ";
       gpp = "git clone $(xclip -o -sel cli)";
-      ytpp = "youtube-dl -o '%(title)s.%(ext)s' --external-downloader aria2c $(xclip -o -sel cli)";
       ygpp = "you-get $(xclip -o -sel cli)";
     };
   };

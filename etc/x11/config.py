@@ -158,37 +158,37 @@ def switchkeyboardlayout():
 
 screens = [
     Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.Prompt(),
-                widget.GroupBox(),
-                widget.TaskList(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.HDDBusyGraph(),
-                widget.CPU(format='{load_percent}%'),
-                widget.GenPollText(func = diskfreespace, update_interval=3),
-                widget.Memory( format='{MemUsed: .0f}{mm}'),
-                widget.Net(format="\u2193{down}\u2191{up}",prefix="k", interface="enp2s0"),
-                widget.Volume(emoji=True),
-                widget.Wttr(location={'69089': 'Запоріжжя'},units='M',format=2),
+#        bottom=bar.Bar(
+#            [
+#                widget.CurrentLayout(),
+#                widget.Prompt(),
+#                widget.GroupBox(),
+#                widget.TaskList(),
+#                widget.Chord(
+#                    chords_colors={
+#                        'launch': ("#ff0000", "#ffffff"),
+#                    },
+#                    name_transform=lambda name: name.upper(),
+#                ),
+#                widget.HDDBusyGraph(),
+#                widget.CPU(format='{load_percent}%'),
+#                widget.GenPollText(func = diskfreespace, update_interval=3),
+#                widget.Memory( format='{MemUsed: .0f}{mm}'),
+#                widget.Net(format="\u2193{down}\u2191{up}",prefix="k", interface="enp2s0"),
+#                widget.Volume(emoji=True),
+#                widget.Wttr(location={'69089': 'Запоріжжя'},units='M',format=2),
 #                widget.TextBox("Win-r - Запуск программы ", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Wallpaper(directory='~/Изображения/wallpapers',wallpaper='sity.jpg',label='🌅',wallpaper_command=None),
-                widget.Clock(format='%H:%M:%S'),
-                widget.GenPollText(func = printkeyboardlayout, update_interval=1, mouse_callbacks={'Button1': switchkeyboardlayout }),
+#                widget.Systray(),
+#                widget.Wallpaper(directory='~/Изображения/wallpapers',wallpaper='sity.jpg',label='🌅',wallpaper_command=None),
+#                widget.Clock(format='%H:%M:%S'),
+#                widget.GenPollText(func = printkeyboardlayout, update_interval=1, mouse_callbacks={'Button1': switchkeyboardlayout }),
 #                widget.KeyboardKbdd(configured_keyboard=['ua','us']),
 #                widget.KeyboardLayout( configured_keyboards = ['us', 'ua '],
 #                 option="grp:rctrl_rshift_toggle,nbsp:level3,lv3:ralt_switch"), 
                 #widget.QuickExit(),
-            ],
-            24,
-        ),
+#            ],
+#            24,
+#        ),
     ),
 ]
 
@@ -213,24 +213,25 @@ floating_layout = layout.Floating(float_rules=[
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
     Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(wm_class='conky'),  # ssh-askpass
+    Match(wm_class='pcmanfm-qt'),  
+    Match(wm_class='conky'),  
     Match(title='branchdialog'),  # gitk
     Match(title='pinentry'),  # GPG key password entry
 ])
 #tiled windows
 #my_tiled_windows=Rule(Match(wm_class='TelegramDesktop'),)
 
-from libqtile import hook
-@hook.subscribe.float_change
-def tilemediaviewer(window):
-    if window.name=="Media viewer":
-        window.floating = False
+#from libqtile import hook
+#@hook.subscribe.float_change
+#def tilemediaviewer(window):
+#    if window.name=="Media viewer":
+#        window.floating = False
 
 
 
-auto_fullscreen = True
-focus_on_window_activation = "smart"
-reconfigure_screens = True
+#auto_fullscreen = True
+#focus_on_window_activation = "smart"
+#reconfigure_screens = True
 
 
 

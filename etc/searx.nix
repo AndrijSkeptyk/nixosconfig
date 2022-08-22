@@ -6,13 +6,24 @@
 
   services.searx.enable = true;
   services.searx.settings.server.secret_key= "anvaryl";
-  services.searx.settings.engines = lib.singleton 
+  services.searx.settings.engines = [ 
+#    {keep_only = "google";}
   {
      name = "apk mirror";
      engine  = "apk";
      disabled = false;
      category = "android";
-   };
+   }
+
+   {
+     name = "bing";
+     shortcut = "b1";
+   }
+ ];
+ services.searx.settings.general.categories = ["general"
+ "android"
+
+]; 
 
 
 

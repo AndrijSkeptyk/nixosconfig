@@ -9,7 +9,7 @@
         "super + Return" = "kitty";
 
          # Rofi 
-         "ctrl + Menu" = "rofi -theme Pop-Dark -modi drun,run,window,filebrowser -show drun -show-icons -sidebar-mode";
+         "ctrl + Menu" = "rofi -theme gruvbox-dark-hard -modi drun,run,window -show drun -show-icons -sidebar-mode";
          # sxhkd reload configuration files
          "super + Escape" = "pkill -USR1 -x sxhkd";
 

@@ -2,9 +2,9 @@
 
 {
   imports =  [ 
-#              ./sxhkd.nix
+              ./sxhkd.nix
               ./picom.nix
-#              ./bspwm.nix
+              ./bspwm.nix
   ];
 
 
@@ -33,7 +33,7 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
-  services.xserver.displayManager.defaultSession = "lxqt+qtile"; 
+  services.xserver.displayManager.defaultSession = "lxqt+i3"; 
 
 #  services.xserver.desktopManager.xfce.enable = true;
 #  services.xserver.desktopManager.pantheon.enable = true;
@@ -46,8 +46,8 @@
     pkgs.lxqt.compton-conf
   ];
 
-#  services.xserver.windowManager.berry.enable = true;
-  services.xserver.windowManager.qtile.enable = true;
+  services.xserver.windowManager.i3.enable = true;
+#  services.xserver.windowManager.qtile.enable = true;
   
   
 
@@ -56,29 +56,31 @@
 
 
 
-  environment.systemPackages = [
-#   pkgs.xfce.xfce4-timer-plugin
-#   pkgs.xfce.xfce4-genmon-plugin
-#   pkgs.xfce.xfce4-i3-workspaces-plugin
-#   pkgs.xfce.xfce4-mailwatch-plugin
-#   pkgs.xfce.xfce4-namebar-plugin
-#   pkgs.xfce.xfce4-netload-plugin
-#   pkgs.xfce.xfce4-screenshooter
-#   pkgs.xfce.xfce4-verve-plugin
-#   pkgs.xfce.xfce4-weather-plugin
-#   pkgs.xfce.xfce4-xkb-plugin 
-#   pkgs.polybar
-   pkgs.flameshot 
-   pkgs.lxqt.lxqt-themes
-   pkgs.lightly-qt
-   pkgs.qgnomeplatform
-   pkgs.zuki-themes
-   pkgs.theme-obsidian2
-   pkgs.qtstyleplugin-kvantum-qt4
-   pkgs.copyq 
-   pkgs.crow-translate
-#   pkgs.sxhkd
-   pkgs.xkblayout-state
+  environment.systemPackages = with pkgs;  [
+   flameshot 
+#   lxqt.lxqt-themes
+#   lightly-qt
+#   qgnomeplatform
+#   zuki-themes
+#   theme-obsidian2
+#   qtstyleplugin-kvantum-qt4
+   copyq 
+   crow-translate
+   kbdd # демо клавиатури, который сохраняет в каждом окне свою раскладку
+   xkblayout-state
+   xclip # работа з буфером обмена
+   xdg-utils # работа с mime файлами
+   xdotool # робота с окнами X11
+   xorg.libX11 # для X11
+   xorg.libXft # для X11
+   xorg.libXinerama # для X11
+   xorg.libXrandr # для X11
+   xorg.libXScrnSaver # для X11
+   xorg.xev # спросмотр собітий окна
+   xorg.xmessage # для X11
+   xorg.xkill # закритие окна и удаление его процесса
+   wmctrl
+
   ];
 
 
@@ -88,7 +90,7 @@
 
   home-manager.users.andrey = { pkgs, ... }: {
     home.file.".background-image".source = ./wallpapers/sity.jpg;
-    xdg.configFile."qtile/config.py".source = ./config.py;
+#    xdg.configFile."qtile/config.py".source = ./config.py;
 
   };
 

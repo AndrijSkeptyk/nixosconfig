@@ -10,11 +10,12 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.useDHCP = false;
-  networking.interfaces.br-6fdbab5ada7c.useDHCP = true;
-  networking.interfaces.docker0.useDHCP = true;
+#
+networking.interfaces.br-6fdbab5ada7c.useDHCP = true;
+#  networking.interfaces.docker0.useDHCP = true;
   networking.interfaces.enp2s0.useDHCP = true;
   networking.interfaces.veth6e14cb9.useDHCP = true;
-  networking.interfaces.veth8db1382.useDHCP = true;
+#  networking.interfaces.veth8db1382.useDHCP = true;
   networking.networkmanager.enable = true;
 
   # Open ports in the firewall.
@@ -29,7 +30,6 @@
   services.trilium-server={
       enable = true;
       port = 8899;
-#      dataDir ="/home/andrey/Notesbooks/mytrilium/"; 
     };
 
 

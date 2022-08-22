@@ -34,9 +34,9 @@
    time.timeZone = "Europe/Zaporozhye";
 
   
-  virtualisation.libvirtd.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+ virtualisation.libvirtd.enable = true;
+# virtualisation.virtualbox.host.enable = true;
+# virtualisation.virtualbox.host.enableExtensionPack = true;
 
 
   documentation.man = { enable = true; man-db.enable = false;
@@ -63,7 +63,7 @@
 #           };
 #
 #    services.system-config-printer.enable=true;
-  hardware.sane.enable = true;
+#  hardware.sane.enable = true;
   # Enable sound.
   sound.enable = true; hardware.pulseaudio.enable = true;
 
@@ -102,4 +102,5 @@
   system.autoUpgrade.enable = true;
 
 }
+
 
