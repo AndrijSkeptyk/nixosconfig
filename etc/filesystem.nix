@@ -21,6 +21,9 @@
   boot.loader.grub.extraEntries=''
     menuentry "Nixos usb" {
       configfile (hd1,msdos1)/nixos/boot/grub/grub.cfg
+      };
+    menuentry "arch usb" {
+      configfile (hd1,msdos1)/arch/boot/grub/grub.cfg
       }
   '';
 

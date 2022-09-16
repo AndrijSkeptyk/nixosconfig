@@ -28,21 +28,21 @@ in {
     autojump # быстрый переход в командной оболочке
     avfs # монтирование архивов
     bat # подсветка синтаксиса
-    beets
-    bleachbit
+#    beets # метаданные музики
+    bleachbit # чистка от мусора
     btrfs-progs # работа с файловой системой btrfs
     calibre # библиотека книг
     calibre-web # удобны веб-интерфейс к  calibre
     catdoc # конвертирование документов Майкрософт Офис в текст
     chromium # веб браузер
-    clementine # библиотека музыки
+#    clementine # библиотека музыки
     cmake  # для разрабочиков ПО
     conky #  отображение информационных панелей
     copyq # продвинутый менеджер буфера обмена
     crow-translate # онлайн перевод выделенного текста
     curl # загрузка  с интернета
     czkawka #поиск дубликатов,  похожих  и ненужных файлов
-    deadbeef
+    deadbeef # медиаплеер и конвертор музыки
     djvulibre # работа з djvu
     dmenu # мени для х11
     docker # контейнер docker 
@@ -70,15 +70,17 @@ in {
     gv #x11 ghostscript
     highlight #подсветка текста
     home-manager # конфигурация пользовательского профиля Nixos
-    hplipWithPlugin
+#    hplipWithPlugin
     htop # просмотр процессов
     imagemagick # обрабока изображений
     jp # for cli view json
     jgmenu # меню запуска программ
+#    joplin # заметки
+#    joplin-desktop # заметки
     keepassxc # менеджер паролей 
     killall # завершение процессов
     kitty # терминал с отображением графики
-    lame
+    lame # конвертирование медиа кодек
     libnotify # сообщения нотификации
     libreoffice # бесплатный офис
 #    libuchardet # библиотека распознавания символов
@@ -94,10 +96,10 @@ in {
     nerdfonts # шрифты
     odt2txt # преобразование документов libreoffice в текст
     okular # просмотр документов
-    obsidian # база заметок 
+#    obsidian # база заметок 
     p7zip # архиватор
     picom # композитор для оконых менеджеров
-    picard
+    picard # медиатеги
     pistol # для просмотра файлов
     php # программирование сайтов
     pmount # монтирование дисков
@@ -108,7 +110,7 @@ in {
       ipython # ipython
       xapian # база данних, используемая в recoll
       mistune #  парсер markdown
-      py3status
+      py3status 
       beets
 #      qtile
     ]))
@@ -116,7 +118,7 @@ in {
     recoll # локальний поиск текста
     rofi # меню для запуска программ
     ruby # язык программирования
-    sayonara
+    sayonara # библиотека музыки
     scrot # скриншоты (скрипт bash)
     sigil # редактор книг epub
 #    smenu # выбор файлов в терминале

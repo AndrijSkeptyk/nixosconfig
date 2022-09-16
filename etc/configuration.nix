@@ -18,7 +18,7 @@
         ./x11/default.nix
         ./shells/default.nix
         ./users.nix
-        ./searx.nix
+#        ./searx.nix
     ];
 
 

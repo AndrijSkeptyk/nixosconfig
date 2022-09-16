@@ -23,7 +23,8 @@
   services.xserver.xkbVariant = "rus";
   services.xserver.xkbOptions = "grp:rctrl_rshift_toggle,nbsp:level3,lv3:ralt_switch";
 
-  services.xserver.desktopManager.wallpaper.mode="fill";
+#  services.xserver.desktopManager.wallpaper.mode="fill";
+#  services.xserver.desktopManager.wallpaper.combineScreens = true;
 
   
   
@@ -34,11 +35,12 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
   services.xserver.displayManager.defaultSession = "lxqt+i3"; 
+  services.xserver.windowManager.i3.extraSessionCommands =  "${pkgs.feh}/bin/feh --bg-scale --no-xinerama $HOME/.background-image"; 
 
 #  services.xserver.desktopManager.xfce.enable = true;
 #  services.xserver.desktopManager.pantheon.enable = true;
 
-  services.xserver.desktopManager.lxqt.enable = true;
+services.xserver.desktopManager.lxqt.enable = true;
   environment.lxqt.excludePackages = [
     pkgs.lxqt.qterminal
     pkgs.lxqt.lximage-qt
@@ -90,8 +92,8 @@
 
   home-manager.users.andrey = { pkgs, ... }: {
     home.file.".background-image".source = ./wallpapers/sity.jpg;
-#    xdg.configFile."qtile/config.py".source = ./config.py;
-
+    home.file.".config/i3/config".source = ./i3.conf;
+    home.file.".config/i3/i3status.conf".source = ./i3status.conf;
   };
 
 
