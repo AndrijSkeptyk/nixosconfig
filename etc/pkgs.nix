@@ -37,6 +37,7 @@ in {
     chromium # веб браузер
 #    clementine # библиотека музыки
     cmake  # для разрабочиков ПО
+    conda
     conky #  отображение информационных панелей
     copyq # продвинутый менеджер буфера обмена
     crow-translate # онлайн перевод выделенного текста
@@ -80,6 +81,7 @@ in {
     keepassxc # менеджер паролей 
     killall # завершение процессов
     kitty # терминал с отображением графики
+    kotatogram-desktop
     lame # конвертирование медиа кодек
     libnotify # сообщения нотификации
     libreoffice # бесплатный офис
@@ -130,6 +132,7 @@ in {
     terminus_font # шрифт
     terminus_font_ttf # шрифт
     tree # просмотр дерева каталогов
+    trilium-desktop
     unrar #архиватор
 #    ueberzug
     fzf-zsh #u
