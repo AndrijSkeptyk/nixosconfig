@@ -1,0 +1,58 @@
+{
+	"name": "Vimium C",
+	"@time": "27.09.2022, 21:26:54",
+	"time": 1664303214626,
+	"environment": {
+		"extension": "1.99.3",
+		"platform": "linux",
+		"chromium": "105"
+	},
+	"allBrowserUrls": true,
+	"keyLayout": 1,
+	"keyMappings": [
+		"#!no-check",
+		"map cg openUrl url=\"http://webcache.googleusercontent.com/search?q=cache:$s\" url_mask=\"$s\"",
+		""
+	],
+	"nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+	"searchEngines": [
+		"bi: https://cn.bing.com/search?q=$s",
+		"bi|bing: https://www.bing.com/search?q=%s \\",
+		"  blank=https://www.bing.com/ Bing",
+		"",
+		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
+		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i\\",
+		"  blank=https://www.google.com/ Google",
+		"d|dd|ddg|duckduckgo: http://localhost:8888/?q=!ddg\\ %s DuckDuckGo",
+		"qw|qwant: http://localhost:8888/?q=!qw\\ %s Qwant",
+		"yh|yahoo: http://localhost:8888/?q=!yh\\ %s Yahoo",
+		"g.m|gm|g.map|gmap: https://www.google.com/maps?q=%s \\",
+		"  blank=https://www.google.com/maps Google Maps",
+		"y|yt: http://localhost:8888/?q=!yt\\  %s \\",
+		"  blank=https://www.youtube.com/ YouTube",
+		"w|wiki: http://localhost:8888/?q=!wp\\ Wikipedia",
+		"g.s|gs|gscholar: https://scholar.google.com/scholar?q=$s \\",
+		"  scholar.google.com re=/^(?:\\.[a-z]{2,4})?\\/scholar\\b.*?[#&?]q=([^#&]*)/i\\",
+		"  blank=https://scholar.google.com/ Google Scholar",
+		"\\:i: vimium://sed/s/^//,lower\\ $S re= Lower case",
+		"v.m|math: vimium://math\\ $S re= Calculate",
+		"v.p: vimium://parse\\ $S re= Redo Search",
+		"gh|github: https://github.com/search?q=$s \\",
+		"  blank=https://github.com/ GitHub Repo",
+		"ge|gitee: https://search.gitee.com/?type=repository&q=$s \\",
+		"  blank=https://gitee.com/ Gitee 仓库",
+		"js\\:|Js: javascript:\\ $S; JavaScript",
+		""
+	],
+	"searchUrl": "http://localhost:8888/search?q=$s Google",
+	"vimSync": true,
+	"vomnibarOptions": {
+		"actions": "",
+		"maxMatches": 10,
+		"queryInterval": 333,
+		"sizes": "77,3,44,0.8",
+		"styles": "dark"
+	},
+	"ignoreKeyboardLayout": 2
+}
