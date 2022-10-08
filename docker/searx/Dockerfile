@@ -4,8 +4,7 @@ EXPOSE 8080
 
 
 WORKDIR /usr/local/searx
-
-
+RUN pip install ipython
 COPY myxpath.py ./searx/engines/myxpath.py
 #COPY btdigg.py ./searx/engines/btdigg.py
 
