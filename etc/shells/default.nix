@@ -44,9 +44,28 @@
       ns = "nix-shell ";
       nr = "sudo nixos-rebuild switch ";
       ne = "nix-env ";
-      x = "xonsh";
+      ncl = "nix-collect-garbage ";
 
-      g = "git ";
+      i = "ipython ";
+
+      gta = "git add";
+      gtc = "git commit ";
+      gts = "git status";
+      gtgh = "git push";
+      ghgt = "git pull";
+      gtr = "git rm ";
+      gtu = "git restore ";
+      
+      dcu = "docker-compose up  --build -d";
+      dcd = "docker-compose down";
+      gcr = "docker-compose restart";
+      dps  = "docker ps -a";
+      dil = "docker image list";
+      dip = "docker image prune";
+      dir = "docker rmi";
+
+      ffpp = "ffmpeg -i $(xclip -o -sel cli)";
+
       gpp = "git clone $(xclip -o -sel cli)";
       ygpp = "you-get $(xclip -o -sel cli)";
     };

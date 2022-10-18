@@ -206,6 +206,7 @@ engines:
   - name : arxiv
     engine : arxiv
     shortcut : arx
+    language : en_US
     categories : science
     timeout : 4.0
 

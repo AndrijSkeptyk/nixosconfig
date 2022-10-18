@@ -31,7 +31,7 @@ in {
 #    beets # метаданные музики
     bleachbit # чистка от мусора
     btrfs-progs # работа с файловой системой btrfs
-    calibre # библиотека книг
+#    calibre # библиотека книг
     calibre-web # удобны веб-интерфейс к  calibre
     catdoc # конвертирование документов Майкрософт Офис в текст
     chromium # веб браузер
@@ -108,12 +108,12 @@ in {
     postgresql # сервер базы данных
     poppler # обработка pdf
     (python3Full.withPackages(ps : with ps ;[
-      dbus-python # пакет dbus для python 3
+#      dbus-python # пакет dbus для python 3
       ipython # ipython
-      xapian # база данних, используемая в recoll
-      mistune #  парсер markdown
+#      xapian # база данних, используемая в recoll
+#      mistune #  парсер markdown
       py3status 
-      beets
+#      beets
 #      qtile
     ]))
     qemu # емулятор виртуальной машины

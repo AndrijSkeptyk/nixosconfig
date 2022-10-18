@@ -37,7 +37,7 @@
  virtualisation.libvirtd.enable = true;
 # virtualisation.virtualbox.host.enable = true;
 # virtualisation.virtualbox.host.enableExtensionPack = true;
-
+  services.flatpak.enable = true; 
 
   documentation.man = { enable = true; man-db.enable = false;
   mandoc.enable = true; };
