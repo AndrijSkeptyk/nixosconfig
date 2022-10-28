@@ -8,6 +8,6 @@
   users.users.andrey = {
     isNormalUser = true;
     extraGroups = [ "wheel" "audio" "video" "docker" "networkmanager" "vboxusers"]; 
-    shell=pkgs.zsh;
+    shell=pkgs.bashInteractive;
      };
    }

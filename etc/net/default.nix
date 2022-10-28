@@ -33,10 +33,9 @@ networking.interfaces.br-6fdbab5ada7c.useDHCP = true;
     };
 
 
-  services.calibre-web.enable = true;
-  services.calibre-web.user = "andrey";
-  services.calibre-web.options.enableBookConversion = true;
-#  services.calibre-web.options.calibreLibrary = /home/andrey/Calibre/All/metadata.db;
+#`  services.calibre-web.enable = true;
+#`  services.calibre-web.user = "andrey";
+#`  services.calibre-web.options.enableBookConversion = true;
 
 }
 

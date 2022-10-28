@@ -6,10 +6,10 @@
 let unstable = import <unstable> {};
 in { 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "libgit2-0.27.10"
-    "python3.9-mistune-0.8.4"
-  ];
+#  nixpkgs.config.permittedInsecurePackages = [
+#    "libgit2-0.27.10"
+#    "python3.9-mistune-0.8.4"
+#  ];
 
   environment.systemPackages = with pkgs; [
 #    adb-sync # android
@@ -32,7 +32,7 @@ in {
     bleachbit # чистка от мусора
     btrfs-progs # работа с файловой системой btrfs
 #    calibre # библиотека книг
-    calibre-web # удобны веб-интерфейс к  calibre
+#    calibre-web # удобны веб-интерфейс к  calibre
     catdoc # конвертирование документов Майкрософт Офис в текст
     chromium # веб браузер
 #    clementine # библиотека музыки
@@ -65,6 +65,7 @@ in {
     #glow #Render markdown on the CLI
     gmrun #удобный запуск программ
     gnumake # для разрабочиков ПО
+    gnome.zenity
     #gnome.gnome-keyring
     gparted # редактирование разделов диска
 #    groff # обработка текста
@@ -81,7 +82,7 @@ in {
     keepassxc # менеджер паролей 
     killall # завершение процессов
     kitty # терминал с отображением графики
-    kotatogram-desktop
+ #   kotatogram-desktop
     lame # конвертирование медиа кодек
     libnotify # сообщения нотификации
     libreoffice # бесплатный офис
@@ -90,7 +91,7 @@ in {
 #    lua51Packages.lua-iconv
     mediainfo # информация о медиафайлах
     miller # обработка файлов csv, json ...
-    monolith # загрузка html и преобразование в один файл
+#    monolith # загрузка html и преобразование в один файл
     mpv # видеоплеер
     mupdf # обработка pdf
     mysql # sql сервер
@@ -107,17 +108,10 @@ in {
     pmount # монтирование дисков
     postgresql # сервер базы данных
     poppler # обработка pdf
-    (python3Full.withPackages(ps : with ps ;[
-#      dbus-python # пакет dbus для python 3
-      ipython # ipython
-#      xapian # база данних, используемая в recoll
-#      mistune #  парсер markdown
-      py3status 
-#      beets
-#      qtile
-    ]))
+    python39Packages.py3status
+    python39Packages.ipython
     qemu # емулятор виртуальной машины
-    recoll # локальний поиск текста
+#    recoll # локальний поиск текста
     rofi # меню для запуска программ
     ruby # язык программирования
     sayonara # библиотека музыки
@@ -135,7 +129,7 @@ in {
     trilium-desktop
     unrar #архиватор
 #    ueberzug
-    fzf-zsh #u
+#    fzf-zsh #u
     clifm # терминальный файловый менеджер 
     unzip # архиватор
     usbutils # работа с usb

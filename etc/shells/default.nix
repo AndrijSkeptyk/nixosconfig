@@ -17,9 +17,6 @@
         source "${pkgs.clifm}/share/clifm/functions/cd_on_quit.sh" 
         source "${pkgs.clifm}/share/clifm/functions/file_picker.sh" 
         source "${pkgs.clifm}/share/clifm/functions/subshell_notice.sh" 
-#        tomp3() {
-#          ffmpeg -i "$1" -vn -codec:a libmp3lame -q:a 2 "$1".mp3
-#          }
         ytpp() {
            youtube-dl -o '%(title)s.%(ext)s' --external-downloader  aria2c $@  $(xclip -o -sel cli)
            }
@@ -30,11 +27,19 @@
 
 
 
-    shells = [ pkgs.bashInteractive pkgs.zsh ];
+    shells = [ pkgs.bashInteractive ];
     
     homeBinInPath = true;
 
     shellAliases =  {
+      
+      c = "clifm"
+
+      h = "history";
+      hg = "history|grep";
+      p = "ps -ax";
+      pg = "ps -ax|grep";
+
 
       q = "exit";
       sdwn = "shutdown -h 0";
@@ -72,26 +77,26 @@
   };
 
 
-  programs.zsh={
-      enable = true;
-      enableCompletion = true;
-      autosuggestions.enable = true;
-
-     ohMyZsh = {
-        enable = true;
-        theme = "peepcode";
-        plugins = [
-          "autojump"
-        ];
-     };
-  };
+#  programs.zsh={
+#      enable = true;
+#      enableCompletion = true;
+#      autosuggestions.enable = true;
+#
+#     ohMyZsh = {
+#        enable = true;
+#        theme = "peepcode";
+#        plugins = [
+#          "autojump"
+#        ];
+#     };
+#  };
 
   environment.systemPackages = with pkgs; [
       lf
-      oh-my-zsh
+#      oh-my-zsh
       trash-cli
-      zsh-autosuggestions
-      zsh-syntax-highlighting
+#      zsh-autosuggestions
+#      zsh-syntax-highlighting
       ueberzug
     ];
     
