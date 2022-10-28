@@ -89,11 +89,11 @@
       options = [ "subvol=Music" ];
     };
 
-  fileSystems."/home/andrey/Notesbooks" =
-    { device = "/dev/disk/by-uuid/bb4cca63-bde0-4af7-855e-af49a68efef8";
-      fsType = "btrfs";
-      options = [ "subvol=Notesbooks,compress=zstd" ];
-    };
+#  fileSystems."/home/andrey/Notesbooks" =
+#    { device = "/dev/disk/by-uuid/bb4cca63-bde0-4af7-855e-af49a68efef8";
+#      fsType = "btrfs";
+#      options = [ "subvol=Notesbooks,compress=zstd" ];
+#    };
 
   fileSystems."/home/andrey/Изображения" =
     { device = "/dev/disk/by-uuid/bb4cca63-bde0-4af7-855e-af49a68efef8";

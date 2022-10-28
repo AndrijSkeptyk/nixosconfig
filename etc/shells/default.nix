@@ -33,7 +33,7 @@
 
     shellAliases =  {
       
-      c = "clifm"
+      c = "clifm";
 
       h = "history";
       hg = "history|grep";

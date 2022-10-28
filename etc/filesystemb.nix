@@ -79,11 +79,11 @@
       options = [ "subvol=Music" ];
     };
 
-  fileSystems."/home/andrey/Notesbooks" =
-    { device = "/dev/disk/by-uuid/a788aa13-e2fd-4ae2-b405-bb48799d189b";
-      fsType = "btrfs";
-      options = [ "subvol=Notesbooks,compress=zstd" ];
-    };
+#  fileSystems."/home/andrey/Notesbooks" =
+#    { device = "/dev/disk/by-uuid/a788aa13-e2fd-4ae2-b405-bb48799d189b";
+#      fsType = "btrfs";
+#      options = [ "subvol=Notesbooks,compress=zstd" ];
+#    };
 
   fileSystems."/home/andrey/Изображения" =
     { device = "/dev/disk/by-uuid/a788aa13-e2fd-4ae2-b405-bb48799d189b";
