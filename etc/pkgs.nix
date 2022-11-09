@@ -39,6 +39,7 @@ in {
     cmake  # для разрабочиков ПО
     conda
     conky #  отображение информационных панелей
+    coolreader
     copyq # продвинутый менеджер буфера обмена
     crow-translate # онлайн перевод выделенного текста
     curl # загрузка  с интернета
@@ -66,10 +67,12 @@ in {
     gmrun #удобный запуск программ
     gnumake # для разрабочиков ПО
     gnome.zenity
+    gtk-pipe-viewer
     #gnome.gnome-keyring
     gparted # редактирование разделов диска
 #    groff # обработка текста
     gv #x11 ghostscript
+    handlr
     highlight #подсветка текста
     home-manager # конфигурация пользовательского профиля Nixos
 #    hplipWithPlugin
@@ -91,6 +94,7 @@ in {
 #    lua51Packages.lua-iconv
     mediainfo # информация о медиафайлах
     miller # обработка файлов csv, json ...
+    mimeo
 #    monolith # загрузка html и преобразование в один файл
     mpv # видеоплеер
     mupdf # обработка pdf
@@ -101,6 +105,7 @@ in {
     okular # просмотр документов
 #    obsidian # база заметок 
     p7zip # архиватор
+    perl534Packages.FileMimeInfo #mimeopen mimeinfo
     picom # композитор для оконых менеджеров
     picard # медиатеги
     pistol # для просмотра файлов
@@ -110,13 +115,16 @@ in {
     poppler # обработка pdf
     python39Packages.py3status
     python39Packages.ipython
+    python39Packages.ocrmypdf
     qemu # емулятор виртуальной машины
 #    recoll # локальний поиск текста
+    rakudo
     rofi # меню для запуска программ
     ruby # язык программирования
     sayonara # библиотека музыки
     scrot # скриншоты (скрипт bash)
     sigil # редактор книг epub
+    sioyek
 #    smenu # выбор файлов в терминале
     sqlite # работа з базой данных
     sqlitebrowser # просмотр базы данных
