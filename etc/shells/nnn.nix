@@ -13,15 +13,12 @@
     programs.nnn.package = pkgs.nnn.override ({ withNerdIcons = true; });
     programs.nnn.bookmarks = {
       d = "/home/andrey/Загрузки";
-      D = "/home/andrey/Data";
       g = "/home/andrey/git";
       v = "/home/andrey/Видео";
-      a = "/home/andrey/Музыка";
+      m = "/home/andrey/Музыка";
       c = "~/.config";
       p = "~/.config/nnn/plugins";
       l = "~/.local";
-      m = "/mnt";
-      n = "/nix";
       s = "/nix/store";
     };
     
@@ -31,12 +28,15 @@
     source = (pkgs.fetchFromGitHub {
       owner = "jarun";
       repo = "nnn";
-      rev = "v4.4";
-      sha256 = "sha256-g9GaCc/IWKtih0/A2AZEPImjj7ymJIdYwC5I/6GUh5c=";
+      rev = "v4.7";
+      sha256 = "sha256-ttG0aEqMlNyJaMhcVfrxbxlrhr1GSydrV58CYSq4CTM=";
+#      rev = "v4.4";
+#      sha256 = "sha256-g9GaCc/IWKtih0/A2AZEPImjj7ymJIdYwC5I/6GUh5c=";
     }) + "/plugins";
   };
     programs.nnn.plugins.mappings = {
       ";" = "myfzplug";
+      "b" = "mybackup";
       "-" = "preview-tui";
       "o" = "organize";
       "c" = "-!$SHELL -c clifm";
@@ -74,7 +74,36 @@
                                   printf "$sep""Failed to execute '%s'. See error above or try without fzfplug. Press return to continue. " "$plugin" && read -r _ && clear
                                       fi
           '';
- xdg.configFile."nnn/plugins/myfzplug".executable =  true;
+          xdg.configFile."nnn/plugins/mybackup".text =  ''
+        #!/usr/bin/env bash
+        sudo bash <<END
+        mount LABEL=manjaro /mnts || exit 1
+        mount LABEL=usbmanjaro /mnt || exit 1
+        rsync -av --delete /mnts/Data /mnt/Data/
+        rsync -av --delete /mnts/Documents/ /mnt/Documents/
+        rsync -av --delete /mnts/git/ /mnt/git/
+        rsync -av --delete /mnts/iso/ /mnt/iso/
+        rsync -av --delete /mnts/Downloads/ /mnt/Downloads/
+        rsync -av --delete /mnts/Music/ /mnt/Music/
+        rsync -av --delete /mnts/nixhome/ /mnt/nixhome/
+        #rsync -av --delete /mnts/Notesbooks/ /mnt/Notesbook/
+        rsync -av --delete /mnts/Pictures/ /mnt/Pictures/
+        rsync -av --delete /mnts/Videos/ /mnt/Videos/
+        rsync -av --delete /mnts/Calibre/Computers/ /mnt/Calibre/Computers/
+        rsync -av --delete /mnts/Calibre/Cooking/ /mnt/Calibre/Cooking/
+        rsync -av --delete /mnts/Calibre/Hacker/ /mnt/Calibre/Hacker/
+        rsync -av --delete /mnts/Calibre/Literature/ /mnt/Calibre/Literature/
+        rsync -av --delete /mnts/Calibre/Medicine/ /mnt/Calibre/Medicine/
+        rsync -av --delete /mnts/Calibre/Mix/ /mnt/Calibre/Mix/
+        rsync -av --delete /mnts/Calibre/Society/ /mnt/Calibre/Society/
+        rsync -av --delete /mnts/Calibre/All/ /mnt/Calibre/All/
+        rsync -av --delete /mnts/trilium/ /mnt/trilium/
+        umount /mnt
+        umount /mnts
+        END
+  '';
+   xdg.configFile."nnn/plugins/myfzplug".executable =  true;
+   xdg.configFile."nnn/plugins/mybackup".executable =  true;
 
   };
 

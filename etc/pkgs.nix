@@ -16,6 +16,8 @@ in {
 #    adbfs-rootless# android
 #    android-studio# android
 #    android-file-transfer# android
+#    appimagekit
+    appimage-run
 #    arcan.durden
 #    arcan.arcan
     archivemount # mounting of cpio, .tar.gz, .tar.bz2
@@ -31,20 +33,21 @@ in {
 #    beets # метаданные музики
     bleachbit # чистка от мусора
     btrfs-progs # работа с файловой системой btrfs
-#    calibre # библиотека книг
-#    calibre-web # удобны веб-интерфейс к  calibre
+    calibre # библиотека книг
     catdoc # конвертирование документов Майкрософт Офис в текст
     chromium # веб браузер
-#    clementine # библиотека музыки
     cmake  # для разрабочиков ПО
-    conda
+    conda # conda-shell, conda-install
+#    micromamba # усовершенстванная conda
     conky #  отображение информационных панелей
     coolreader
     copyq # продвинутый менеджер буфера обмена
+    coreutils 
     crow-translate # онлайн перевод выделенного текста
     curl # загрузка  с интернета
     czkawka #поиск дубликатов,  похожих  и ненужных файлов
     deadbeef # медиаплеер и конвертор музыки
+    djvu2pdf # конвертор djvu в pdf
     djvulibre # работа з djvu
     dmenu # мени для х11
     docker # контейнер docker 
@@ -56,14 +59,16 @@ in {
     file # информация о типе файла
     flameshot # получение скриншотов
     font-manager # менеджер шрифтов
+    fontpreview # nnn depend optinal viewer
     fzf #cmd fuzzy finder
     feh # просмотр изображений
 #    gcc # для разрабочиков ПО
+    firefox-esr
     gcc_multi # для разрабочиков ПО
     gimp-with-plugins # графический редактор Gimp
     gitFull # git
     go
-    #glow #Render markdown on the CLI
+    glow #Render markdown on the CLI, nnn view
     gmrun #удобный запуск программ
     gnumake # для разрабочиков ПО
     gnome.zenity
@@ -72,7 +77,6 @@ in {
     gparted # редактирование разделов диска
 #    groff # обработка текста
     gv #x11 ghostscript
-    handlr
     highlight #подсветка текста
     home-manager # конфигурация пользовательского профиля Nixos
 #    hplipWithPlugin
@@ -94,8 +98,7 @@ in {
 #    lua51Packages.lua-iconv
     mediainfo # информация о медиафайлах
     miller # обработка файлов csv, json ...
-    mimeo
-#    monolith # загрузка html и преобразование в один файл
+    mktemp # nnn viewer depend
     mpv # видеоплеер
     mupdf # обработка pdf
     mysql # sql сервер
@@ -105,11 +108,12 @@ in {
     okular # просмотр документов
 #    obsidian # база заметок 
     p7zip # архиватор
-    perl534Packages.FileMimeInfo #mimeopen mimeinfo
+    perl536Packages.FileMimeInfo #mimeopen mimeinfo
     picom # композитор для оконых менеджеров
     picard # медиатеги
     pistol # для просмотра файлов
-    php # программирование сайтов
+    php # программирование сайтовa
+    physlock # optional nnn, alternative vlock
     pmount # монтирование дисков
     postgresql # сервер базы данных
     poppler # обработка pdf
@@ -123,22 +127,25 @@ in {
     ruby # язык программирования
     sayonara # библиотека музыки
     scrot # скриншоты (скрипт bash)
+    sftpman # sshfs/sftp mount
     sigil # редактор книг epub
     sioyek
 #    smenu # выбор файлов в терминале
     sqlite # работа з базой данных
     sqlitebrowser # просмотр базы данных
+    sshfs # for nnn fuse mount over ssh
     sxiv # просмотр изображений
     system-config-printer
     tdesktop # Telegram-Desktop
     terminus_font # шрифт
     terminus_font_ttf # шрифт
+    trash-cli # trash for nnn
     tree # просмотр дерева каталогов
     trilium-desktop
     unrar #архиватор
 #    ueberzug
 #    fzf-zsh #u
-    clifm # терминальный файловый менеджер 
+#    clifm # терминальный файловый менеджер 
     unzip # архиватор
     usbutils # работа с usb
     util-linux # разные полезные утититы
@@ -151,6 +158,7 @@ in {
     you-get # загрузка видео
     youtube-dl # загрузка видео
     zip # архиватор
+    zef
     zoom # мессенджер
     zathura # просмотр pdf
   ];

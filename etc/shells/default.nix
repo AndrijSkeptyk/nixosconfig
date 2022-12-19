@@ -13,13 +13,7 @@
       VISUAL = "vim";
     };
 
-    shellInit = ''
-        source "${pkgs.clifm}/share/clifm/functions/cd_on_quit.sh" 
-        source "${pkgs.clifm}/share/clifm/functions/file_picker.sh" 
-        source "${pkgs.clifm}/share/clifm/functions/subshell_notice.sh" 
-        ytpp() {
-           youtube-dl -o '%(title)s.%(ext)s' --external-downloader  aria2c $@  $(xclip -o -sel cli)
-           }
+    extraInit = ''
         lr() {
           cp -r $(readlink -f $1;unlink $1>/dev/null) $1
       }'';
@@ -30,69 +24,74 @@
     shells = [ pkgs.bashInteractive ];
     
     homeBinInPath = true;
+    localBinInPath = true;
 
     shellAliases =  {
       
-      c = "clifm";
+#      c = "clifm ";
 
-      h = "history";
-      hg = "history|grep";
-      p = "ps -ax";
-      pg = "ps -ax|grep";
-
-
+      h = "history ";
+      p = "ps -ax ";
       q = "exit";
       sdwn = "shutdown -h 0";
       lsp = "netstat -tupln";
-
+      i = "ipython ";
+      r = "raku"; 
+      ffpp = "ffmpeg -i $(xclip -o -sel cli) ";
+      ygpp = "you-get $(xclip -o -sel cli) ";
+      ytpp = "youtube-dl -o '%(title)s.%(ext)s' --external-downloader  aria2c  $(xclip -o -sel cli)";
+      ocr = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l rus+eng --unpaper-args '--layout double' ";
+      p6doc = "docker run --rm -d -p 3000:3000 jjmerelo/perl6-doc ";
+      
+/*      jpl = ''
+        conda-shell <<END
+        activate anaconda
+        jupyter-lab
+        END 
+      '';
+*/
+      
+      
       nh = "nix-hash --type sha256 --base32 ";
       ns = "nix-shell ";
-      nr = "sudo nixos-rebuild switch ";
+      nr = "sudo nixos-rebuild switch";
+      nru = "sudo nixos-rebuild switch --upgrade-all";
       ne = "nix-env ";
-      ncl = "nix-collect-garbage ";
+      nel = "nix-env --list-generations";
+      ned = "nix-env --delete-generations ";
+      ne3d = "nix-env --delete-generations +3 ";
+      nei = "nix-env -iA";
+      neq = "nix-env -q ";
+      nee = "nix-env -e ";
+      ncg = "nix-collect-garbage ";
 
-      i = "ipython ";
-
-      gta = "git add";
+      gta = "git add ";
       gtc = "git commit ";
-      gts = "git status";
-      gtgh = "git push";
-      ghgt = "git pull";
+      gts = "git status ";
+      gtgh = "git push ";
+      ghgt = "git pull ";
       gtr = "git rm ";
       gtu = "git restore ";
+      gpp = "git clone $(xclip -o -sel cli) ";
       
-      dcu = "docker-compose up  --build -d";
-      dcd = "docker-compose down";
-      gcr = "docker-compose restart";
-      dps  = "docker ps -a";
-      dil = "docker image list";
-      dip = "docker image prune";
-      dir = "docker rmi";
+      dcu = "docker-compose up  --build -d ";
+      dcd = "docker-compose down ";
+      gcr = "docker-compose restart ";
+      
+      dps  = "docker ps -a ";
+      dil = "docker image list ";
+      dip = "docker image prune ";
+      dir = "docker rmi ";
 
-      ffpp = "ffmpeg -i $(xclip -o -sel cli)";
-
-      gpp = "git clone $(xclip -o -sel cli)";
-      ygpp = "you-get $(xclip -o -sel cli)";
+      ag = "alias|grep ";
+      pg = "ps -ax|grep ";
+      hg = "history|grep ";
     };
   };
 
 
-#  programs.zsh={
-#      enable = true;
-#      enableCompletion = true;
-#      autosuggestions.enable = true;
-#
-#     ohMyZsh = {
-#        enable = true;
-#        theme = "peepcode";
-#        plugins = [
-#          "autojump"
-#        ];
-#     };
-#  };
 
   environment.systemPackages = with pkgs; [
-      lf
 #      oh-my-zsh
       trash-cli
 #      zsh-autosuggestions

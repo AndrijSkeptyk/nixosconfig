@@ -27,6 +27,7 @@
   home-manager.users.andrey = { pkgs, ... }: {
      home.username = "andrey";
      home.homeDirectory = "/home/andrey";
+     home.stateVersion = "18.09";
    };
 
 
