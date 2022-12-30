@@ -1,4 +1,4 @@
-{ config, pkgs,  ... }:
+{ config, pkgs, stdenv, lib, fetchFromGitHub,  ... }:
 
 
 {
@@ -37,6 +37,7 @@
       lsp = "netstat -tupln";
       i = "ipython ";
       r = "raku"; 
+      c = "conda-shell"; 
       ffpp = "ffmpeg -i $(xclip -o -sel cli) ";
       ygpp = "you-get $(xclip -o -sel cli) ";
       ytpp = "youtube-dl -o '%(title)s.%(ext)s' --external-downloader  aria2c  $(xclip -o -sel cli)";
@@ -86,9 +87,13 @@
       ag = "alias|grep ";
       pg = "ps -ax|grep ";
       hg = "history|grep ";
+      eg = "env|grep ";
     };
   };
 
+
+
+  
 
 
   environment.systemPackages = with pkgs; [
@@ -97,9 +102,14 @@
 #      zsh-autosuggestions
 #      zsh-syntax-highlighting
       ueberzug
+      (import ./nnnplugins.nix)
     ];
-    
+# home-manager.users.andrey = { pkgs, ... }: {
+#   home.file.".config/nnn/plugins" = {
+#   source="$nnnplugin"+"/plugins";
+#   recursive=true;
+# };
+#};
 }
-
 
 

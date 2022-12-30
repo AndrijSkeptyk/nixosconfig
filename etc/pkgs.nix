@@ -45,6 +45,9 @@ in {
     coreutils 
     crow-translate # онлайн перевод выделенного текста
     curl # загрузка  с интернета
+    czmq
+    cppzmq
+    zmqpp
     czkawka #поиск дубликатов,  похожих  и ненужных файлов
     deadbeef # медиаплеер и конвертор музыки
     djvu2pdf # конвертор djvu в pdf
@@ -71,7 +74,8 @@ in {
     glow #Render markdown on the CLI, nnn view
     gmrun #удобный запуск программ
     gnumake # для разрабочиков ПО
-    gnome.zenity
+    gnome.zenity # gui диалоги
+    gtdialog # gui диалоги
     gtk-pipe-viewer
     #gnome.gnome-keyring
     gparted # редактирование разделов диска
@@ -120,6 +124,8 @@ in {
     python39Packages.py3status
     python39Packages.ipython
     python39Packages.ocrmypdf
+    python39Packages.txzmq
+    python39Packages.pyzmq
     qemu # емулятор виртуальной машины
 #    recoll # локальний поиск текста
     rakudo
@@ -145,7 +151,7 @@ in {
     unrar #архиватор
 #    ueberzug
 #    fzf-zsh #u
-#    clifm # терминальный файловый менеджер 
+    clifm # терминальный файловый менеджер 
     unzip # архиватор
     usbutils # работа с usb
     util-linux # разные полезные утититы

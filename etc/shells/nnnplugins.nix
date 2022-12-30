@@ -1,6 +1,7 @@
 with import <nixpkgs> {};  
 let
-  mybackup =  ./mybackup;
+  mybackup=./mybackup;
+  nuke=./nuke;
 in  
  stdenv.mkDerivation rec {
    pname = "nnnplugins";
@@ -16,11 +17,15 @@ in
    dontBuild = true;
  
    inherit mybackup;
+   inherit nuke;
    installPhase = ''
         source $stdenv/setup
-         cp -R -f  plugins/ $out
-         cp -f  "$mybackup" $out/backup
-   '';
+        mkdir -p $out/plugins
+        cp -R -f  plugins/ $out/
+        cp "$mybackup" $out/plugins/mybackup
+        cp -f "$nuke" $out/plugins/nuke
+        cat plugins/fzplug|sed -r -e 's/(^plugin...find)/\1 -L/' > $out/plugins/fzplug
+        '';
   meta = rec {
     decription = "Small ncurses-based file browser forked from noice";
     homepage = "https://github.com/jarun/nnn";
