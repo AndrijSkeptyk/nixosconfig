@@ -38,17 +38,23 @@
     }) + "/plugins";
   };
     programs.nnn.plugins.mappings = {
+      "d" = "dups";
+      "f" = "finder";
       "b" = "mybackup";
       "-" = "preview-tui";
-      "o" = "organize";
+      "o" = "myocr";
       "i" = "-!ipython";
       "c" = "-!conda-shell";
-      "r" = "-!raku";
-      "m" = "-!mimeopen -d \\\"\\\$\{PWD\}/\\\$\{nnn\}\\\"";
+#      "r" = "-!raku";
+      "p" = "myfzplug";
+      "m" = "mimelist";
+      ";" = "xdg_set_default_open";
     };
    xdg.configFile."nnn/plugins/myfzplug".source =  ./myfzplug;
    xdg.configFile."nnn/plugins/mybackup".source = ./mybackup;
-   xdg.configFile."nnn/plugins/nuke".source = pkgs.lib.mkForce ./nuke;
+#   xdg.configFile."nnn/plugins/nuke".source = pkgs.lib.mkForce ./nuke;
+   xdg.configFile."nnn/plugins/xdg_set_default_open".source =  ./xdg_set_default_open;
+   xdg.configFile."nnn/plugins/myocr".source =  ./myocr;
 
   };
 

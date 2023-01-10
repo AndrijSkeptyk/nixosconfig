@@ -41,7 +41,14 @@
       ffpp = "ffmpeg -i $(xclip -o -sel cli) ";
       ygpp = "you-get $(xclip -o -sel cli) ";
       ytpp = "youtube-dl -o '%(title)s.%(ext)s' --external-downloader  aria2c  $(xclip -o -sel cli)";
-      ocr = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l rus+eng --unpaper-args '--layout double' ";
+      wgpp = "wget -Erkp -np -w 1 $(xclip -o -sel cli) "; 
+      
+      
+      ocrre = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l rus+eng --unpaper-args '--layout double' ";
+      ocrr = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l rus --unpaper-args '--layout double' ";
+      ocre = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l eng --unpaper-args '--layout double' ";
+      ocru = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l ukr --unpaper-args '--layout double' ";
+      ocrue = "ocrmypdf --output-type=pdfa-2  --pdfa-image-compression=jpeg -O 2  -d -c -l ukr+eng --unpaper-args '--layout double' ";
       p6doc = "docker run --rm -d -p 3000:3000 jjmerelo/perl6-doc ";
       
 /*      jpl = ''

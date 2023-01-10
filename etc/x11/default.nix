@@ -2,9 +2,9 @@
 
 {
   imports =  [ 
-              ./sxhkd.nix
+#             ./sxhkd.nix
               ./picom.nix
-              ./bspwm.nix
+#              ./bspwm.nix
   ];
 
 
@@ -26,7 +26,12 @@
 #  services.xserver.desktopManager.wallpaper.mode="fill";
 #  services.xserver.desktopManager.wallpaper.combineScreens = true;
 
-  
+#  programs.sway.enable = true;
+#  xdg.portal.wlr.enable = true;
+#  services.pipewire.enable = true;
+#  services.pipewire.alsa.enable = true;
+
+
   
   
   

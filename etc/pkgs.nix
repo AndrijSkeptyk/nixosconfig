@@ -18,6 +18,7 @@ in {
 #    android-file-transfer# android
 #    appimagekit
     appimage-run
+#    apostrophe
 #    arcan.durden
 #    arcan.arcan
     archivemount # mounting of cpio, .tar.gz, .tar.bz2
@@ -68,6 +69,7 @@ in {
 #    gcc # для разрабочиков ПО
     firefox-esr
     gcc_multi # для разрабочиков ПО
+    ghostwriter
     gimp-with-plugins # графический редактор Gimp
     gitFull # git
     go
@@ -86,6 +88,9 @@ in {
 #    hplipWithPlugin
     htop # просмотр процессов
     imagemagick # обрабока изображений
+    inetutils
+    jbig2enc
+    jbig2dec
     jp # for cli view json
     jgmenu # меню запуска программ
 #    joplin # заметки
@@ -107,6 +112,7 @@ in {
     mupdf # обработка pdf
     mysql # sql сервер
     ncurses # создание tui 
+    nethogs
     nerdfonts # шрифты
     odt2txt # преобразование документов libreoffice в текст
     okular # просмотр документов
@@ -121,6 +127,7 @@ in {
     pmount # монтирование дисков
     postgresql # сервер базы данных
     poppler # обработка pdf
+#    unpapper
     python39Packages.py3status
     python39Packages.ipython
     python39Packages.ocrmypdf
@@ -142,9 +149,11 @@ in {
     sshfs # for nnn fuse mount over ssh
     sxiv # просмотр изображений
     system-config-printer
+    tcpdump
     tdesktop # Telegram-Desktop
     terminus_font # шрифт
     terminus_font_ttf # шрифт
+#    thiefmd
     trash-cli # trash for nnn
     tree # просмотр дерева каталогов
     trilium-desktop
