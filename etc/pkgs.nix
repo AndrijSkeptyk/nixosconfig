@@ -32,48 +32,51 @@ in {
     avfs # монтирование архивов
     bat # подсветка синтаксиса
 #    beets # метаданные музики
-    bleachbit # чистка от мусора
+    bleachbit # чистка от мусора no guix
     btrfs-progs # работа с файловой системой btrfs
-    calibre # библиотека книг
+    calibre # библиотека книг old wer guix
     catdoc # конвертирование документов Майкрософт Офис в текст
     chromium # веб браузер
     cmake  # для разрабочиков ПО
     conda # conda-shell, conda-install
 #    micromamba # усовершенстванная conda
     conky #  отображение информационных панелей
-    coolreader
+#    coolreader # no guix
     copyq # продвинутый менеджер буфера обмена
     coreutils 
-    crow-translate # онлайн перевод выделенного текста
+    crow-translate # онлайн перевод выделенного текста no guix  
     curl # загрузка  с интернета
     czmq
     cppzmq
     zmqpp
-    czkawka #поиск дубликатов,  похожих  и ненужных файлов
-    deadbeef # медиаплеер и конвертор музыки
+    czkawka #поиск дубликатов,  похожих  и ненужных файлов no guix
+    dconf
+    gnome.dconf-editor
+    deadbeef # медиаплеер и конвертор музыки no guix
     djvu2pdf # конвертор djvu в pdf
     djvulibre # работа з djvu
     dmenu # мени для х11
     docker # контейнер docker 
     docker-compose # контейнер docker
     emacs # мощный редактор написаний на лиспе
-    epick #color picker
+    epick #color picker no guix
     ffmpeg-full # работа с видео
     ffmpegthumbnailer # скины видео
     file # информация о типе файла
-    flameshot # получение скриншотов
-    font-manager # менеджер шрифтов
-    fontpreview # nnn depend optinal viewer
+    flameshot # получение скриншотов no guix
+    font-manager # менеджер шрифтов no guix
+    fontpreview # nnn depend optinal viewer  no guix
     fzf #cmd fuzzy finder
     feh # просмотр изображений
 #    gcc # для разрабочиков ПО
-    firefox-esr
+#    firefox-esr #  no guix
     gcc_multi # для разрабочиков ПО
-    ghostwriter
+    ghostwriter # 
     gimp-with-plugins # графический редактор Gimp
     gitFull # git
     go
-    glow #Render markdown on the CLI, nnn view
+    glib
+    glow #Render markdown on the CLI, nnn view no guix
     gmrun #удобный запуск программ
     gnumake # для разрабочиков ПО
     gnome.zenity # gui диалоги
@@ -89,60 +92,69 @@ in {
     htop # просмотр процессов
     imagemagick # обрабока изображений
     inetutils
-    jbig2enc
+    jbig2enc # no guix
     jbig2dec
-    jp # for cli view json
+    jp # for cli view json no guix
     jgmenu # меню запуска программ
 #    joplin # заметки
 #    joplin-desktop # заметки
     keepassxc # менеджер паролей 
     killall # завершение процессов
     kitty # терминал с отображением графики
- #   kotatogram-desktop
+#    konsole #   
     lame # конвертирование медиа кодек
     libnotify # сообщения нотификации
     libreoffice # бесплатный офис
 #    libuchardet # библиотека распознавания символов
     lsof # просмотр открытих файлов
+    lm_sensors 
+    lshw
 #    lua51Packages.lua-iconv
     mediainfo # информация о медиафайлах
-    miller # обработка файлов csv, json ...
-    mktemp # nnn viewer depend
+    miller # обработка файлов csv, json ...no guix
+    mktemp # nnn viewer depend no guix
     mpv # видеоплеер
     mupdf # обработка pdf
-    mysql # sql сервер
+    mysql # sql сервер??
+    cinnamon.nemo #no guix 
     ncurses # создание tui 
     nethogs
     nerdfonts # шрифты
+    navi #шпаргалка
     odt2txt # преобразование документов libreoffice в текст
     okular # просмотр документов
 #    obsidian # база заметок 
     p7zip # архиватор
+    pandoc
     perl536Packages.FileMimeInfo #mimeopen mimeinfo
     picom # композитор для оконых менеджеров
     picard # медиатеги
-    pistol # для просмотра файлов
+    pistol # для просмотра файлов no guix
     php # программирование сайтовa
     physlock # optional nnn, alternative vlock
     pmount # монтирование дисков
+    polybarFull
     postgresql # сервер базы данных
     poppler # обработка pdf
 #    unpapper
+    python39Full
     python39Packages.py3status
+    python39Packages.beautifulsoup4
     python39Packages.ipython
-    python39Packages.ocrmypdf
+    python39Packages.ocrmypdf #no guix
     python39Packages.txzmq
     python39Packages.pyzmq
     qemu # емулятор виртуальной машины
+    qutebrowser
 #    recoll # локальний поиск текста
     rakudo
     rofi # меню для запуска программ
     ruby # язык программирования
-    sayonara # библиотека музыки
+    sayonara # библиотека музыки no guix
     scrot # скриншоты (скрипт bash)
-    sftpman # sshfs/sftp mount
-    sigil # редактор книг epub
-    sioyek
+    sftpman # sshfs/sftp mount no guix
+    sigil # редактор книг epub no guix
+#    sioyek #no guix
 #    smenu # выбор файлов в терминале
     sqlite # работа з базой данных
     sqlitebrowser # просмотр базы данных
@@ -160,11 +172,11 @@ in {
     unrar #архиватор
 #    ueberzug
 #    fzf-zsh #u
-    clifm # терминальный файловый менеджер 
+#    clifm # терминальный файловый менеджер no guix
     unzip # архиватор
     usbutils # работа с usb
     util-linux # разные полезные утититы
-    vifm-full # текстовый редактор
+#    vifm-full # текстовый редактор
     vim_configurable # текстовый редактор
     virt-manager # менеджер виртуальних машин
     w3m # тестовый интернет браузер
@@ -174,7 +186,7 @@ in {
     youtube-dl # загрузка видео
     zip # архиватор
     zef
-    zoom # мессенджер
+    zoom # мессенджер no guix
     zathura # просмотр pdf
   ];
   

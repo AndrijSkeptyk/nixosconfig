@@ -11,11 +11,11 @@
         sha256 = "1h768ljlh3pi23l27qp961v1hd0nbj2vasgy11bmcrlqp40zgvnr";
       })
 
-      (pkgs.fetchFirefoxAddon {
-        name = "google_page_translate"; 
-        url = "https://addons.mozilla.org/firefox/downloads/file/3884216/translator-1.0.3-fx.xpi";
-        sha256 = "11g19l52xvba3jp86pm9mncv8wg65r49rkc9fh8xf8a7vb2wnldn";
-      })
+#      (pkgs.fetchFirefoxAddon {
+#        name = "google_page_translate"; 
+#        url = "https://addons.mozilla.org/firefox/downloads/file/3884216/translator-1.0.3-fx.xpi";
+#        sha256 = "11g19l52xvba3jp86pm9mncv8wg65r49rkc9fh8xf8a7vb2wnldn";
+#      })
 
       (pkgs.fetchFirefoxAddon {
         name = "trilium"; 

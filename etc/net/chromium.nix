@@ -3,7 +3,7 @@
 
 {
 programs.chromium.enable = true;
-programs.chromium.homepageLocation = "http://localhost:8888/"; #statrx
+#programs.chromium.homepageLocation = "http://localhost:8888/"; #statrx
 programs.chromium.extraOpts = {
   "SyncDisabled" = true;
   "PasswordManagerEnabled" = false;
@@ -23,7 +23,6 @@ home-manager.users.andrey = { pkgs, ... }: {
     { id = "dfhgmnfclbebfobmblelddiejjcijbjm"; }  #Trilium Web Clipper
     { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }  #uBlock Origin
     { id = "gfbliohnnapiefjpjlpjnehglfpaknnc"; }  #Surfingkeys
-    { id = "fddjpichkajmnkjhcmpbbjdmmcodnkej"; }  #РуТрекер - официальный плагин (доступ и пр.)
 ];
 };
 }

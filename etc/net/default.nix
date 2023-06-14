@@ -4,7 +4,7 @@
 {
   
   imports = [
-    ./firefox.nix 
+#    ./firefox.nix 
     ./chromium.nix 
  ];
 
@@ -36,6 +36,11 @@
 #`  services.calibre-web.enable = true;
 #`  services.calibre-web.user = "andrey";
 #`  services.calibre-web.options.enableBookConversion = true;
+
+  home-manager.users.andrey = { pkgs, ... }: {
+    home.file.".config/qutebrowser/config.py".source = ./qutebrowser/config.py;
+  };
+
 
 }
 

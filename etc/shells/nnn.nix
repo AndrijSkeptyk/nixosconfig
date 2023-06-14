@@ -22,6 +22,7 @@
       c = "~/.config";
       p = "~/.config/nnn/plugins";
       l = "~/.local";
+      o = "~/Look";
       s = "/nix/store";
     };
     

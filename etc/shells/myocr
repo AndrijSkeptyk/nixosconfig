@@ -38,7 +38,7 @@ fi
 
 
 create_cmd() {
-  echo ocrmypdf --output-type=$ocr_output -O $ocr_O -l ${ocr_lang} ${ocr_jbig2} $ocr_clean $ocr_clean_final $ocr_deskew  $ocr_force_ocr $ocr_skip_text $ocr_remove_background $ocr_rotate_pages $ocr_redo_ocr "$source_file" ${source_file%.*}_ocr.pdf
+  echo ocrmypdf --output-type=$ocr_output -O $ocr_O -l ${ocr_lang} ${ocr_jbig2} $ocr_clean $ocr_clean_final $ocr_deskew  $ocr_force_ocr $ocr_skip_text $ocr_remove_background $ocr_rotate_pages $ocr_redo_ocr "$source_file" "${source_file%.*}"_ocr.pdf
 }
 
 edit_arg() {

@@ -11,10 +11,17 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.supportedFilesystems = [ "btrfs" ];
-  boot.loader.grub.version = 2;
-  boot.loader.grub.useOSProber=true;
+  boot.loader.grub.useOSProber=false;
   boot.loader.grub.efiSupport = false;
   boot.loader.grub.device = "/dev/sdb"; # or "nodev" for efi only
+  boot.loader.grub.extraEntries=''
+    menuentry "Nixos sata" {
+      configfile (hd1,msdos1)/nixos/boot/grub/grub.cfg
+      };
+    menuentry "guix sata" {
+      configfile (hd1,msdos1)/guix/boot/grub/grub.cfg
+      }
+  '';
 
 
 
@@ -59,6 +66,12 @@
     { device = "/dev/disk/by-uuid/a788aa13-e2fd-4ae2-b405-bb48799d189b";
       fsType = "btrfs";
       options = [ "subvol=Documents,compress=zstd" ];
+    };
+
+  fileSystems."/home/andrey/tiddlywiki" =
+    { device = "/dev/disk/by-uuid/a788aa13-e2fd-4ae2-b405-bb48799d189b";
+      fsType = "btrfs";
+      options = [ "subvol=tiddlywiki,compress=zstd" ];
     };
 
   fileSystems."/home/andrey/git" =

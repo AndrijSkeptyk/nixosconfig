@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+title=$(cat $QUTE_HTML|htmlq '.ChatInfo .fullName' --text)
+time=$(echo $QUTE_SELECTED_HTML|htmlq '.message-time' --text)
+from=$(echo -e $QUTE_SELECTED_HTML|htmlq '.message-title-name' --text|sed 's/\(.\)$/\1\n/')
+body=$(echo -e  $QUTE_SELECTED_HTML|sed 's/<br>/\n/g'|htmlq -r '.Reactions' -r '.CommentButton' -r '.message-title' -r '.message-media-duration' -r '.MessageMeta' -r '.text-entity-link' --text)
+body=$(echo -e "$body"|sed 's/русн/р..н/ig'|sed 's/кацап/якцап/ig')
+echo -e "$title [$time]\n$from$body" |xclip -i -sel clip

@@ -2,7 +2,7 @@
 sudo bash <<END
 mount LABEL=manjaro /mnts || exit 1
 mount LABEL=usbmanjaro /mnt || exit 1
-rsync -av --delete /mnts/Data /mnt/Data/
+rsync -av --delete /mnts/Data/ /mnt/Data/
 rsync -av --delete /mnts/Documents/ /mnt/Documents/
 rsync -av --delete /mnts/git/ /mnt/git/
 rsync -av --delete /mnts/iso/ /mnt/iso/
@@ -12,15 +12,9 @@ rsync -av --delete /mnts/nixhome/ /mnt/nixhome/
 rsync -av --delete /mnts/Notesbooks/ /mnt/Notesbook/
 rsync -av --delete /mnts/Pictures/ /mnt/Pictures/
 rsync -av --delete /mnts/Videos/ /mnt/Videos/
-rsync -av --delete /mnts/Calibre/Computers/ /mnt/Calibre/Computers/
-rsync -av --delete /mnts/Calibre/Cooking/ /mnt/Calibre/Cooking/
-rsync -av --delete /mnts/Calibre/Hacker/ /mnt/Calibre/Hacker/
-rsync -av --delete /mnts/Calibre/Literature/ /mnt/Calibre/Literature/
-rsync -av --delete /mnts/Calibre/Medicine/ /mnt/Calibre/Medicine/
-rsync -av --delete /mnts/Calibre/Mix/ /mnt/Calibre/Mix/
-rsync -av --delete /mnts/Calibre/Society/ /mnt/Calibre/Society/
 rsync -av --delete /mnts/Calibre/All/ /mnt/Calibre/All/
 rsync -av --delete /mnts/trilium/ /mnt/trilium/
+rsync -av --delete /mnts/tiddlywiki/ /mnt/tiddlywiki/
 umount /mnt
 umount /mnts
 END

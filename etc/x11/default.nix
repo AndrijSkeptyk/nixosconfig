@@ -39,12 +39,13 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
-  services.xserver.displayManager.defaultSession = "lxqt+i3"; 
+  services.xserver.displayManager.defaultSession = "lxqt+notion"; 
   services.xserver.windowManager.i3.extraSessionCommands =  "${pkgs.feh}/bin/feh --bg-scale --no-xinerama $HOME/.background-image"; 
 
-#  services.xserver.desktopManager.xfce.enable = true;
-#  services.xserver.desktopManager.pantheon.enable = true;
-
+services.xserver.desktopManager.xfce.enable = true;
+#services.xserver.desktopManager.gnome.enable = true;
+#services.gnome.tracker.enable=false;
+#services.gnome.tracker-miners.enable=false;
 services.xserver.desktopManager.lxqt.enable = true;
   environment.lxqt.excludePackages = [
     pkgs.lxqt.qterminal
@@ -53,8 +54,9 @@ services.xserver.desktopManager.lxqt.enable = true;
     pkgs.lxqt.compton-conf
   ];
 
+  services.xserver.windowManager.notion.enable = true;
   services.xserver.windowManager.i3.enable = true;
-#  services.xserver.windowManager.qtile.enable = true;
+  services.xserver.windowManager.i3.package = pkgs.i3-rounded;
   
   
 

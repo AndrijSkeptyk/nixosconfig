@@ -11,12 +11,13 @@
     variables =  {
       EDITOR = "vim";
       VISUAL = "vim";
+      PATH="$HOME/.npm_global/bin:$PATH";
     };
 
-    extraInit = ''
-        lr() {
-          cp -r $(readlink -f $1;unlink $1>/dev/null) $1
-      }'';
+#    extraInit = ''
+#        lr() {
+#          cp -r $(readlink -f $1;unlink $1>/dev/null) $1
+#      }'';
 
 
 

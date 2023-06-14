@@ -11,7 +11,6 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.supportedFilesystems = [ "btrfs" ];
-  boot.loader.grub.version = 2;
   #boot.loader.grub.useOSProber=true;
   boot.loader.grub.efiSupport = false;
   # boot.loader.grub.efiInstallAsRemovable = true;
@@ -22,9 +21,6 @@
     menuentry "Nixos usb" {
       configfile (hd1,msdos1)/nixos/boot/grub/grub.cfg
       };
-    menuentry "arch usb" {
-      configfile (hd1,msdos1)/arch/boot/grub/grub.cfg
-      }
   '';
 
 
@@ -76,6 +72,11 @@
       fsType = "btrfs";
       options = [ "subvol=git,compress=zstd" ];
     };
+  fileSystems."/home/andrey/tiddlywiki" =
+    { device = "/dev/disk/by-uuid/bb4cca63-bde0-4af7-855e-af49a68efef8";
+      fsType = "btrfs";
+      options = [ "subvol=tiddlywiki,compress=zstd" ];
+    };
 
   fileSystems."/home/andrey/iso" =
     { device = "/dev/disk/by-uuid/bb4cca63-bde0-4af7-855e-af49a68efef8";
@@ -108,11 +109,11 @@
     };
 
   swapDevices =
-    [ #{ device = "/dev/disk/by-uuid/b1ebe430-0521-4e8c-bff5-8465da7c5b82"; }
+    [{ device = "/dev/disk/by-uuid/b1ebe430-0521-4e8c-bff5-8465da7c5b82"; }
       { device = "/dev/disk/by-uuid/829e4469-28ed-4deb-8cbc-348ecaed4aee"; }
     ];
 
-    zramSwap.enable=true;
+    zramSwap.enable=false;
     
 }
 
