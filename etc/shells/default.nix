@@ -11,7 +11,7 @@
     variables =  {
       EDITOR = "vim";
       VISUAL = "vim";
-      PATH="$HOME/.npm_global/bin:$PATH";
+      PATH="$HOME/.npm_global/bin:/$HOME/.conda/bin:$PATH";
     };
 
 #    extraInit = ''

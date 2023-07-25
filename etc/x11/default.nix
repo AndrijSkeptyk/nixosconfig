@@ -39,13 +39,15 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "andrey";
-  services.xserver.displayManager.defaultSession = "lxqt+notion"; 
+  services.xserver.displayManager.defaultSession = "xfce+notion";
   services.xserver.windowManager.i3.extraSessionCommands =  "${pkgs.feh}/bin/feh --bg-scale --no-xinerama $HOME/.background-image"; 
 
 services.xserver.desktopManager.xfce.enable = true;
 #services.xserver.desktopManager.gnome.enable = true;
 #services.gnome.tracker.enable=false;
 #services.gnome.tracker-miners.enable=false;
+qt.platformTheme="gnome";
+xdg.portal.lxqt.enable=true;
 services.xserver.desktopManager.lxqt.enable = true;
   environment.lxqt.excludePackages = [
     pkgs.lxqt.qterminal
@@ -67,12 +69,11 @@ services.xserver.desktopManager.lxqt.enable = true;
 
   environment.systemPackages = with pkgs;  [
    flameshot 
-#   lxqt.lxqt-themes
-#   lightly-qt
-#   qgnomeplatform
-#   zuki-themes
-#   theme-obsidian2
-#   qtstyleplugin-kvantum-qt4
+   lxqt.lxqt-themes
+   lightly-qt
+   qgnomeplatform
+   zuki-themes
+   theme-obsidian2
    copyq 
    crow-translate
    kbdd # демо клавиатури, который сохраняет в каждом окне свою раскладку
@@ -89,8 +90,24 @@ services.xserver.desktopManager.lxqt.enable = true;
    xorg.xmessage # для X11
    xorg.xkill # закритие окна и удаление его процесса
    wmctrl
-
+   xfce.xfce4-timer-plugin
+   xfce.xfce4-genmon-plugin
+   xfce.xfce4-weather-plugin
+   xfce.xfce4-netload-plugin
+   xfce.xfce4-fsguard-plugin
+   xfce.xfce4-dockbarx-plugin
+#   xfce.xfce4-namebar-plugin
+   xfce.xfce4-windowck-plugin
+   xfce.xfce4-xkb-plugin
+   xfce.xfce4-whiskermenu-plugin
+   xfce.xfce4-sensors-plugin
+   xfce.xfce4-pulseaudio-plugin
+#   xfce.xfce4-embed-plugin
+   xfce.xfce4-datetime-plugin
+   xfce.xfce4-volumed-pulse
   ];
+
+  
 
 
 
@@ -100,6 +117,7 @@ services.xserver.desktopManager.lxqt.enable = true;
   home-manager.users.andrey = { pkgs, ... }: {
     home.file.".background-image".source = ./wallpapers/sity.jpg;
     home.file.".config/i3/config".source = ./i3.conf;
+    home.file.".config/polybar/config".source = ./polybar.config;
     home.file.".config/i3/i3status.conf".source = ./i3status.conf;
   };
 

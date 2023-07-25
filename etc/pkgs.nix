@@ -60,6 +60,7 @@ in {
     docker-compose # контейнер docker
     emacs # мощный редактор написаний на лиспе
     epick #color picker no guix
+    easytag
     ffmpeg-full # работа с видео
     ffmpegthumbnailer # скины видео
     file # информация о типе файла
@@ -89,7 +90,11 @@ in {
     highlight #подсветка текста
     home-manager # конфигурация пользовательского профиля Nixos
 #    hplipWithPlugin
+    htmlq
     htop # просмотр процессов
+    hunspellDicts.en-us
+    hunspellDicts.ru-ru 
+    hunspellDicts.uk-ua
     imagemagick # обрабока изображений
     inetutils
     jbig2enc # no guix
@@ -121,6 +126,7 @@ in {
     nethogs
     nerdfonts # шрифты
     navi #шпаргалка
+    nodejs
     odt2txt # преобразование документов libreoffice в текст
     okular # просмотр документов
 #    obsidian # база заметок 
@@ -137,6 +143,7 @@ in {
     postgresql # сервер базы данных
     poppler # обработка pdf
 #    unpapper
+    pragha
     python39Full
     python39Packages.py3status
     python39Packages.beautifulsoup4
@@ -150,10 +157,11 @@ in {
     rakudo
     rofi # меню для запуска программ
     ruby # язык программирования
-    sayonara # библиотека музыки no guix
+#    sayonara # библиотека музыки no guix
     scrot # скриншоты (скрипт bash)
     sftpman # sshfs/sftp mount no guix
     sigil # редактор книг epub no guix
+    signal-desktop
 #    sioyek #no guix
 #    smenu # выбор файлов в терминале
     sqlite # работа з базой данных

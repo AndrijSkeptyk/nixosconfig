@@ -10,7 +10,8 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-
+  
+  hardware.pulseaudio.enable = true;
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
 }

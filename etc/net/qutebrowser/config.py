@@ -68,16 +68,16 @@ c.hints.selectors = {'all': ['a', 'area', 'textarea', 'select', 'input:not([type
 
 c.url.open_base_url = True 
 c.url.searchengines = {
-                'DEFAULT': 'localhost:5000/search?q={}',
+                'DEFAULT': 'https://global.bing.com/search?setmkt=en-us&setlang=en-us&q={}', 
                 'wh': 'localhost:5000/search?q={}',
                 'g' : 'https://www.google.com/search?q={}',
                 'd' : 'https://duckduckgo.com/?q={}',
                 'b': 'https://global.bing.com/search?setmkt=en-us&setlang=en-us&q={}',
                 'mg':  'https://metager3.de/en/meta/meta.ger3?eingabe={}', 
-                'gb': 'http://www.gigablast.com/search?c=main&qlangcountry=en-us&q={}',
                 'q': 'https://www.qwant.com/?client=opensearch&q={}',
                 'lk': 'https://www.lukol.com/s.php?q=#gsc.tab=0&gsc.page=1&gsc.q={}',
                 'sw': 'https://swisscows.com/web?culture=ru&region=iv&query={}',
+                '1': 'https://search.marginalia.nu/search?query={}',
                 #AI
                 'ay': 'https://you.com/search?&tbm=youchat&cfr=chat&q={}',
                 'ap': 'https://www.perplexity.ai/search?q={}',
