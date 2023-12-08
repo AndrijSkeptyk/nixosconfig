@@ -1,3 +1,0 @@
-#!/usr/bin/env  bash
-cd /home/andrey/.local/share/qutebrowser/userscripts
-kitty node

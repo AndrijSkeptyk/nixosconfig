@@ -9,6 +9,7 @@ in {
     tridactyl-native
     pandoc
     python311Packages.pandoc-xnos
+    texliveTeTeX
   ];
   
 
