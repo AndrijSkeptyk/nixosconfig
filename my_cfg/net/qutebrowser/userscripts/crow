@@ -1,4 +1,0 @@
-#!/usr/bin/env  bash
-IFS=$'\n' 
-crow -b $@  |xclip -i -sel clip
-xclip -o -sel clip
