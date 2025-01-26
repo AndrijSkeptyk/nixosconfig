@@ -636,9 +636,9 @@ c.tabs.mousewheel_switching = False
 # c.url.start_pages = ['/home/andrey/tiddlywiki/notes.html']
 
 c.window.title_format = '{perc}{current_title}'
-c.fileselect.folder.command=['bash','-c','kitty ranger --choosedir={}' ]
-c.fileselect.single_file.command=['bash','-c','kitty ranger --choosefile={}' ]
-c.fileselect.multiple_files.command=['bash','-c','kitty ranger --choosefiles={}' ]
+c.fileselect.folder.command=['bash','-c','kitty ranger --chooser-file {}' ]
+c.fileselect.single_file.command=['bash','-c','kitty yazi --chooser-file {} /home/andrey/Загрузки/' ]
+c.fileselect.multiple_files.command=['bash','-c','kitty yazi --chooser-file {} /home/andrey/Загрузки/' ]
 c.fileselect.handler='external'
 
 #+END_SRC
@@ -3327,6 +3327,7 @@ prepend_keymap = [
     file # информация о типе файла
     mediainfo # информация о медиафайлах
     rofi # меню для запуска программ
+    nix-search-cli
 #+END_SRC
 ** enviroments
 *** delux
@@ -3532,9 +3533,15 @@ services.emacs.defaultEditor=true;
     pandoc
     pistol # для просмотра файлов no guix
     poppler # обработка pdf
+    poppler_utils
+    pdftk
+    pdf2odt
+    pdfchain
+    qpdf
     python311Packages.html2text
     python311Packages.ocrmypdf #no guix
     python311Packages.pandoc-xnos
+    python311Packages.pdf2docx
     python311Packages.weasyprint
     sigil # редактор книг epub no guix
     texliveFull
@@ -3543,7 +3550,7 @@ services.emacs.defaultEditor=true;
     whisper-ctranslate2
     wkhtmltopdf # для получения pdf в pandoc
     zathura # просмотр pdf
-#    omegat
+    recoll
 #+END_SRC
 ** enviroments
 *** delux
@@ -3691,47 +3698,48 @@ services.emacs.defaultEditor=true;
 	  (setq default-directory "~/Downloads/"))
 
 
+
    (defun as-org-telega-msg ()
      (interactive)
-     (let* ((msg (telega-msg-at (point)))
-	    (chat (telega-msg-chat msg))
+     (let ((msg (telega-msg-at (point))))
+       (if msg (let*  ((chat (telega-msg-chat msg))
 	    (title (telega-chat-title chat))
 	    (text (progn (telega-msg-copy-text msg) (car kill-ring)))
 	    (link (progn (telega-msg-copy-link msg) (car kill-ring )))
 	    (date (format-time-string "<%Y-%m-%d %a %H:%M>" (plist-get msg :date)))
 	    )
-
-	  (current-kill 2) 
-	  (with-current-buffer (get-buffer-create "*my-news*")
-	    (erase-buffer)
-	    (org-mode)
-	    (insert (concat "* " title "\n"))
-	    (insert (concat text "\n"))
-	    (org-set-property "url" link)
-	    (org-set-property "date" date)
-	    (org-set-property "channel" title)
-	    (write-region nil nil "~/Документы/org/news.org" t)
+	    (current-kill 2)
+	    (with-current-buffer (get-buffer-create "*my-news*")
+	     (erase-buffer)
+	     (org-mode)
+	     (insert (concat "* " title "\n"))
+	     (insert (concat text "\n"))
+	     (org-set-property "url" link)
+	     (org-set-property "date" date)
+	     (org-set-property "channel" title)
+	     (write-region nil nil "~/Документы/org/news.org" t)
 	  )
 
-  ))
+  ))))
 
   (defun as-telega-news-copy ()
      (interactive)
-     (let* ((msg (telega-msg-at (point)))
-	    (chat (telega-msg-chat msg))
-	    (title (telega-chat-title chat))
-	    (text (progn (telega-msg-copy-text msg) (car kill-ring)))
-	    (date (format-time-string " [%Y-%m-%d %a %H:%M]" (plist-get msg :date)))
-	    )
-	  (current-kill 1)
-	  (setq title (concat title date))
-	  (setq text (string-lines text))
-	  (while text
+     (when-let (msg (telega-msg-at (point)))
+	  (let* ((chat (telega-msg-chat msg))
+	      (title (telega-chat-title chat))
+	      (text (progn (telega-msg-copy-text msg) (car kill-ring)))
+	      (date (format-time-string " [%Y-%m-%d %a %H:%M]" (plist-get msg :date))))
+	   (current-kill 1)
+	   (when-let (fwrd (plist-get msg :forward_info))
+		(setq date (format-time-string " [%Y-%m-%d %a %H:%M]" (plist-get fwrd :date)))
+		(setq title (telega-chat-title (telega-chat-get (plist-get (plist-get fwrd :origin) :chat_id)))))    
+	   (setq title (concat title date))
+	   (setq text (string-lines text))
+	   (while text
 	    (setq title (concat title "\r\n" (car text)) text (cdr text)))
-	  (x-set-selection nil title)  
+	   (x-set-selection nil title)
+  )))
 
-
-  ))
 
 
 
@@ -3744,6 +3752,7 @@ services.emacs.defaultEditor=true;
 	(insert text)))
 
 #+end_src
+
 #+begin_src emacs-lisp
 #+end_src
 ;; (insert (cdr (prop-match-value (text-property-search-forward ':telega-link))))
@@ -3764,7 +3773,7 @@ services.emacs.defaultEditor=true;
   (global-set-key "\C-ca" 'org-agenda)
   (global-set-key "\C-c " 'org-table-blank-field)
   (use-package ob-nix)
-
+  (push '("\\.\\(pdf\\|djvu\\|epub\\)\\'" . "zathura %s") org-file-apps)
 #+end_src
 
 Действия при открытии org
